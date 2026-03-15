@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Wedding</title>
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:   #faf8f5;
+      --warm:    #f2ede6;
+      --stone:   #b5a89a;
+      --ink:     #2c2825;
+      --muted:   #7a6f68;
+      --accent:  #9b7e6b;
+      --line:    #e0d8d0;
+      --max:     860px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Georgia', serif;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--cream);
+      border-bottom: 1px solid var(--line);
+      padding: 0 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      height: 56px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--ink); }
+
+    /* ── Hero ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 80px 2rem 4rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      color: var(--ink);
+    }
+
+    .ampersand {
+      display: block;
+      font-size: clamp(1.5rem, 4vw, 2.8rem);
+      color: var(--stone);
+      margin: 0.2em 0;
+    }
+
+    .date-location {
+      margin-top: 2.5rem;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .divider {
+      display: inline-block;
+      margin: 0 1rem;
+      color: var(--line);
+    }
+
+    /* ── CTA buttons ── */
+    .cta-row {
+      display: flex;
+      gap: 1rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--ink);
+      color: var(--ink);
+      background: transparent;
+      transition: background 0.2s, color 0.2s;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    .btn.filled {
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    .btn.filled:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* ── Sections ── */
+    section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 6rem 2rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-of-type { border-bottom: none; }
+
+    .section-label {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      color: var(--ink);
+    }
+
+    p { color: var(--muted); margin-bottom: 1rem; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── About: two columns ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+
+    .about-grid .person-name {
+      font-size: 1.05rem;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+      font-style: italic;
+    }
+
+    @media (max-width: 600px) {
+      .about-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Timeline ── */
+    .timeline {
+      margin-top: 2rem;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: var(--line);
+    }
+
+    .timeline-item {
+      padding-left: 2rem;
+      padding-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .timeline-item:last-child { padding-bottom: 0; }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -4px;
+      top: 8px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--stone);
+    }
+
+    .timeline-time {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-title {
+      font-size: 1.05rem;
+      color: var(--ink);
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-desc {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 0;
+    }
+
+    /* ── Travel ── */
+    .travel-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .travel-card {
+      background: var(--warm);
+      padding: 1.75rem;
+      border: 1px solid var(--line);
+    }
+
+    .travel-card-label {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 0.5rem;
+    }
+
+    .travel-card h3 {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .travel-card p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    .travel-card a {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+    }
+
+    /* ── Registry / RSVP links ── */
+    #links {
+      text-align: center;
+      padding: 5rem 2rem;
+      border-bottom: none;
+    }
+
+    #links h2 { margin-bottom: 0.75rem; }
+    #links p  { margin-bottom: 2.5rem; }
+
+    .links-row {
+      display: flex;
+      gap: 1.25rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--stone);
+      border-top: 1px solid var(--line);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#travel">Travel</a>
+    <a href="#links">Registry & RSVP</a>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <div id="hero">
+    <p class="eyebrow">We're getting married</p>
+    <h1>
+      First Name
+      <span class="ampersand">&amp;</span>
+      First Name
+    </h1>
+    <p class="date-location">
+      Month Day, Year
+      <span class="divider">·</span>
+      City, State
+    </p>
+    <div class="cta-row">
+      <a class="btn filled" href="#links">RSVP</a>
+      <a class="btn" href="#links">Registry</a>
+    </div>
+  </div>
+
+  <!-- ── About ── -->
+  <section id="about">
+    <p class="section-label">About Us</p>
+    <h2>Our Story</h2>
+    <p>
+      Share how you met, a favorite memory together, or what you love most about each other.
+      This is a great place for a short paragraph that sets the tone for your celebration.
+    </p>
+    <div class="about-grid">
+      <div>
+        <p class="person-name">Partner One</p>
+        <p>
+          A little bit about the first partner — their background, hobbies, what makes them
+          special. Keep it warm and personal.
+        </p>
+      </div>
+      <div>
+        <p class="person-name">Partner Two</p>
+        <p>
+          A little bit about the second partner — their background, hobbies, what makes them
+          special. Keep it warm and personal.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Timeline ── -->
+  <section id="timeline">
+    <p class="section-label">Day Of</p>
+    <h2>Timeline</h2>
+    <p>Here's a look at how the day will unfold.</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <p class="timeline-time">4:00 PM</p>
+        <p class="timeline-title">Guest Arrival</p>
+        <p class="timeline-desc">Doors open. Find your seat and enjoy a welcome drink.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-time">4:30 PM</p>
+        <p class="timeline-title">Ceremony</p>
+        <p class="timeline-desc">Venue Name · Address</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-time">5:30 PM</p>
+        <p class="timeline-title">Cocktail Hour</p>
+        <p class="timeline-desc">Celebrate with drinks and appetizers on the terrace.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-time">7:00 PM</p>
+        <p class="timeline-title">Dinner & Dancing</p>
+        <p class="timeline-desc">Join us in the reception hall for dinner, toasts, and dancing.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-time">11:00 PM</p>
+        <p class="timeline-title">Send-Off</p>
+        <p class="timeline-desc">A grand farewell to end the night.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Travel ── -->
+  <section id="travel">
+    <p class="section-label">Getting Here</p>
+    <h2>Travel & Stay</h2>
+    <p>
+      We'd love for you to make a weekend of it. Here are a few options to help you
+      plan your trip.
+    </p>
+    <div class="travel-cards">
+      <div class="travel-card">
+        <p class="travel-card-label">Venue</p>
+        <h3>Venue Name</h3>
+        <p>123 Venue Street, City, State 00000</p>
+        <a href="https://maps.google.com" target="_blank" rel="noopener">Get directions →</a>
+      </div>
+      <div class="travel-card">
+        <p class="travel-card-label">Hotel Block</p>
+        <h3>Hotel Name</h3>
+        <p>
+          We've reserved a room block. Use code <strong>WEDDING</strong> when booking.
+          Rate available until Month Day.
+        </p>
+        <a href="#" target="_blank" rel="noopener">Book your room →</a>
+      </div>
+      <div class="travel-card">
+        <p class="travel-card-label">Nearby Stays</p>
+        <h3>Other Options</h3>
+        <p>
+          Additional hotels and rentals are available nearby. We're happy to share
+          recommendations — just reach out.
+        </p>
+      </div>
+      <div class="travel-card">
+        <p class="travel-card-label">Airport</p>
+        <h3>Nearest Airport</h3>
+        <p>
+          Airport Name (XXX) is approximately XX miles from the venue. Rideshare and
+          rental cars are both easy options.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Registry & RSVP ── -->
+  <section id="links">
+    <p class="section-label">Join Us</p>
+    <h2>Registry &amp; RSVP</h2>
+    <p>We can't wait to celebrate with you. RSVP by Month Day, Year.</p>
+    <div class="links-row">
+      <a class="btn filled"
+         href="https://www.zola.com/registry/YOUR-REGISTRY-SLUG"
+         target="_blank"
+         rel="noopener">
+        View Registry on Zola
+      </a>
+      <a class="btn"
+         href="https://www.zola.com/wedding/YOUR-WEDDING-SLUG/rsvp"
+         target="_blank"
+         rel="noopener">
+        RSVP
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <p>Name &amp; Name · Month Day, Year · City, State</p>
+  </footer>
+
+</body>
+</html>
