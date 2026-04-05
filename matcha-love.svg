@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800">
+  <defs>
+    <clipPath id="pinkLabel">
+      <path d="M155,355 L174,595 L426,595 L445,355 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="800" fill="#f0f0f0" rx="16"/>
+
+  <!-- Straw -->
+  <rect x="345" y="50" width="20" height="310" rx="10" fill="#f4b8cb" transform="rotate(13, 355, 205)"/>
+
+  <!-- Cup body (green base) -->
+  <path d="M148,275 L172,660 C172,672 182,680 198,680 L402,680 C418,680 428,672 428,660 L452,275 Z" fill="#6fa030"/>
+
+  <!-- Green top band -->
+  <path d="M148,275 L153,350 L447,350 L452,275 Z" fill="#6fa030"/>
+
+  <!-- Pink label/sleeve -->
+  <path d="M155,355 L174,595 L426,595 L445,355 Z" fill="#f4b8cb"/>
+
+  <!-- Green bottom section -->
+  <path d="M174,595 L180,660 C180,670 190,678 202,678 L398,678 C410,678 420,670 420,660 L426,595 Z" fill="#6fa030"/>
+
+  <!-- Matcha swirls at bottom -->
+  <g fill="none" stroke="#b8d86a" stroke-width="10" stroke-linecap="round" opacity="0.7">
+    <path d="M205,625 C215,608 238,608 248,625 C258,642 278,642 290,625"/>
+    <path d="M290,625 C300,608 320,608 332,625 C342,642 362,642 375,625"/>
+    <path d="M220,655 C232,638 252,638 265,655 C278,668 298,665 312,652"/>
+    <path d="M340,655 C350,642 365,640 378,652"/>
+    <path d="M190,650 C200,636 216,636 228,650"/>
+  </g>
+
+  <!-- Lid / foam - bottom ellipse (darker) -->
+  <ellipse cx="300" cy="278" rx="155" ry="30" fill="#c8cd8a"/>
+
+  <!-- Lid / foam - top ellipse (lighter) -->
+  <ellipse cx="300" cy="270" rx="148" ry="25" fill="#dce3a8"/>
+
+  <!-- Hand-drawn brush lettering - clipped to pink label -->
+  <g fill="none" stroke="#1a1a1a" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#pinkLabel)">
+
+    <!-- ===== LINE 1: iLOVE YOU ===== y=370-420 -->
+    <!-- i dot -->
+    <circle cx="192" cy="375" r="5" fill="#1a1a1a" stroke="none"/>
+    <!-- i stem -->
+    <line x1="192" y1="386" x2="192" y2="418" stroke-width="12"/>
+
+    <!-- L -->
+    <path d="M210,380 L210,418 L234,418" stroke-width="12"/>
+
+    <!-- O -->
+    <ellipse cx="256" cy="400" rx="16" ry="19" stroke-width="11"/>
+
+    <!-- V -->
+    <path d="M280,380 L294,418 L308,380" stroke-width="11"/>
+
+    <!-- E -->
+    <path d="M330,380 L316,380 L316,418 L330,418 M316,400 L328,400" stroke-width="10"/>
+
+    <!-- Y -->
+    <path d="M348,380 L360,402 L372,380 M360,402 L360,418" stroke-width="11"/>
+
+    <!-- O -->
+    <ellipse cx="394" cy="400" rx="16" ry="19" stroke-width="11"/>
+
+    <!-- U -->
+    <path d="M418,380 L418,408 C418,420 436,420 436,408 L436,380" stroke-width="11"/>
+
+    <!-- ===== LINE 2: SO MAT- ===== y=440-490 -->
+    <!-- S -->
+    <path d="M192,450 C192,446 218,440 218,456 C218,468 190,466 190,480 C190,492 218,490 218,488" stroke-width="12"/>
+
+    <!-- O -->
+    <ellipse cx="248" cy="470" rx="20" ry="22" stroke-width="12"/>
+
+    <!-- (space) -->
+
+    <!-- M -->
+    <path d="M286,492 L286,448 L306,480 L326,448 L326,492" stroke-width="12"/>
+
+    <!-- A -->
+    <path d="M344,492 L360,448 L376,492 M350,482 L370,482" stroke-width="11"/>
+
+    <!-- T -->
+    <path d="M388,448 L418,448 M403,448 L403,492" stroke-width="12"/>
+
+    <!-- dash -->
+    <line x1="426" y1="472" x2="444" y2="472" stroke-width="11"/>
+
+    <!-- ===== LINE 3: CHA ===== y=510-570 -->
+    <!-- C -->
+    <path d="M228,518 C200,518 190,534 190,548 C190,564 200,578 228,578" stroke-width="14"/>
+
+    <!-- H -->
+    <path d="M248,518 L248,578 M248,548 L278,548 M278,518 L278,578" stroke-width="13"/>
+
+    <!-- A -->
+    <path d="M298,578 L322,518 L346,578 M306,564 L338,564" stroke-width="13"/>
+  </g>
+
+  <!-- Subtle cup edge -->
+  <path d="M148,275 L172,660 C172,672 182,680 198,680 L402,680 C418,680 428,672 428,660 L452,275" fill="none" stroke="#5a8a22" stroke-width="2" opacity="0.3"/>
+</svg>

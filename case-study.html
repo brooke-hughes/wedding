@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study: AV Equipment Rental NYC — B Social Digital Marketing</title>
+  <meta name="description" content="How B Social helped AV Equipment Rental NYC generate 100K+ impressions, 7,700+ clicks, and 1,149 qualified leads through targeted Google Ads campaigns." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .page-hero {
+      padding: 8rem 2rem 4rem;
+      max-width: var(--max);
+      margin: 0 auto;
+      margin-top: 64px;
+    }
+
+    .page-hero h1 { margin-bottom: 1rem; }
+    .page-hero p { color: var(--muted); max-width: 560px; font-size: 1.1rem; }
+
+    /* Client header */
+    .client-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .client-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .client-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 8px;
+    }
+
+    .client-info p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Overview cards */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin: 3rem 0;
+    }
+
+    .overview-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    .overview-card .label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .overview-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Story sections */
+    .story-section { margin-bottom: 3rem; }
+
+    .story-section h2 { margin-bottom: 1rem; }
+
+    .story-section p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      max-width: 720px;
+    }
+
+    /* Campaign list */
+    .campaign-list {
+      list-style: none;
+      margin: 1.5rem 0;
+      max-width: 720px;
+    }
+
+    .campaign-list li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+
+    .campaign-list li span:first-child { color: var(--text); font-weight: 500; }
+    .campaign-list li span:last-child { color: var(--muted); font-size: 0.85rem; }
+
+    /* Results highlight */
+    .results-highlight {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 3rem;
+      margin: 3rem 0;
+    }
+
+    .results-highlight h2 { margin-bottom: 0.5rem; }
+
+    .results-highlight > p {
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    /* Metric breakdown */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .metric-item {
+      border-left: 3px solid var(--accent);
+      padding-left: 1.25rem;
+    }
+
+    .metric-item .number {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .metric-item .label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    .metric-item .context {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+      font-style: italic;
+    }
+
+    /* Quote */
+    .pull-quote {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--text);
+      border-left: 3px solid var(--pop);
+      padding-left: 1.5rem;
+      margin: 3rem 0;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    .pull-quote cite {
+      display: block;
+      font-family: 'Archivo', sans-serif;
+      font-size: 0.85rem;
+      font-style: normal;
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+
+    /* CTA */
+    .cta-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .cta-banner h2 { margin-bottom: 1rem; }
+    .cta-banner p { color: var(--muted); max-width: 480px; margin: 0 auto 2rem; }
+
+    @media (max-width: 768px) {
+      .overview-grid { grid-template-columns: 1fr; }
+      .metrics-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="bsocial." /></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="services.html">Services</a>
+      <a href="about.html">Our Story</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="bridal.html">Bridal &amp; Events</a>
+      <a href="contact.html" class="nav-cta">Work With Us</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <p class="section-label fade-in">Case Study</p>
+    <h1 class="fade-in">From invisible to <em>fully booked</em></h1>
+    <p class="fade-in">How we helped an NYC event rental company drive 1,149 qualified leads with Google Ads.</p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Client Info -->
+  <div class="section">
+    <div class="client-header fade-in">
+      <div class="client-logo">
+        <img src="av-logo.png" alt="AV Equipment Rental NYC logo" />
+      </div>
+      <div class="client-info">
+        <h2 style="margin-bottom: 0.25rem;">AV Equipment Rental NYC</h2>
+        <p>Full-service event equipment rental company &mdash; audio, video, staging, lighting, and more for events across New York City.</p>
+      </div>
+    </div>
+
+    <div class="overview-grid fade-in">
+      <div class="overview-card">
+        <div class="label">Industry</div>
+        <p>Event Equipment Rentals</p>
+      </div>
+      <div class="overview-card">
+        <div class="label">Services</div>
+        <p>Google Ads (Search Campaigns)</p>
+      </div>
+      <div class="overview-card">
+        <div class="label">Focus</div>
+        <p>Lead Generation &amp; Visibility</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- The Challenge -->
+  <div class="section">
+    <div class="story-section fade-in">
+      <p class="section-label">The Challenge</p>
+      <h2>A great company no one could <em>find</em></h2>
+      <p>
+        AV Equipment Rental NYC had everything &mdash; an impressive inventory of staging, dance floors, pipe and drape, velvet ropes, AV gear, and more. They had great relationships and a strong reputation in the NYC event space.
+      </p>
+      <p>
+        But they had one big problem: when event planners and corporate clients searched for rental equipment online, AV Equipment Rental NYC wasn't showing up. They were invisible in the exact moments when potential customers were ready to book.
+      </p>
+      <p>
+        Their competitors were getting the clicks, the calls, and the bookings &mdash; simply because they were showing up first.
+      </p>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- The Strategy -->
+  <div class="section">
+    <div class="story-section fade-in">
+      <p class="section-label">The Strategy</p>
+      <h2>Targeted campaigns for every <em>service line</em></h2>
+      <p>
+        We didn't run one generic campaign. We built a targeted Google Ads strategy with dedicated search campaigns for each of their core service categories &mdash; ensuring they showed up for every specific search a potential client might make.
+      </p>
+
+      <ul class="campaign-list">
+        <li><span>AV Equipment Rentals NYC</span><span>Core brand campaign</span></li>
+        <li><span>Stage Rentals</span><span>High-intent search</span></li>
+        <li><span>Dance Floor Rentals</span><span>High-intent search</span></li>
+        <li><span>Pipe &amp; Drape Rentals</span><span>High-intent search</span></li>
+        <li><span>Velvet Rope Rentals</span><span>High-intent search</span></li>
+        <li><span>Visual Display Rentals</span><span>High-intent search</span></li>
+        <li><span>Party Equipment Rental Service</span><span>Broad capture</span></li>
+        <li><span>Barricade Rental</span><span>Niche targeting</span></li>
+      </ul>
+
+      <p>
+        Each campaign was built around high-intent keywords specific to that service, with tailored ad copy and a maximize-conversions bidding strategy. We optimized for the actions that matter most &mdash; form submissions, phone calls, direction requests, and website visits.
+      </p>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- The Results -->
+  <div class="section">
+    <div class="results-highlight fade-in">
+      <p class="section-label">The Results</p>
+      <h2>The numbers speak for themselves</h2>
+      <p>Consistent, measurable results across every metric that matters.</p>
+
+      <div class="stats-row">
+        <div>
+          <div class="stat-number">100,544</div>
+          <div class="stat-label">Total impressions</div>
+        </div>
+        <div>
+          <div class="stat-number">7,736</div>
+          <div class="stat-label">Total clicks</div>
+        </div>
+        <div>
+          <div class="stat-number">7.69%</div>
+          <div class="stat-label">Click-through rate</div>
+        </div>
+        <div>
+          <div class="stat-number">$4.34</div>
+          <div class="stat-label">Average cost per click</div>
+        </div>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric-item">
+          <div class="number">1,149</div>
+          <div class="label">Total qualified leads</div>
+          <div class="context">Calls, form submissions, directions, and website visits combined</div>
+        </div>
+        <div class="metric-item">
+          <div class="number">335</div>
+          <div class="label">Form submissions</div>
+          <div class="context">Direct inquiries through their website</div>
+        </div>
+        <div class="metric-item">
+          <div class="number">184</div>
+          <div class="label">Website visits from ads</div>
+          <div class="context">High-quality traffic driven to their site</div>
+        </div>
+        <div class="metric-item">
+          <div class="number">128</div>
+          <div class="label">Direction requests</div>
+          <div class="context">People looking up how to get to their location</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Key Takeaways -->
+  <div class="section">
+    <div class="story-section fade-in">
+      <p class="section-label">Key Takeaways</p>
+      <h2>What made this <em>work</em></h2>
+      <p>
+        <strong>Service-specific campaigns beat generic ones.</strong> By building individual campaigns for each service category, we captured high-intent searches that a single broad campaign would have missed entirely.
+      </p>
+      <p>
+        <strong>The right keywords at the right time.</strong> Event rental searches are inherently high-intent &mdash; when someone searches "dance floor rental NYC," they're ready to book. We made sure AV Equipment Rental was the first thing they saw.
+      </p>
+      <p>
+        <strong>Consistent optimization drives compounding results.</strong> We didn't set it and forget it. Ongoing bid management, keyword refinement, and conversion tracking ensured performance improved month over month.
+      </p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="section">
+    <div class="cta-banner fade-in">
+      <p class="section-label">Your Turn</p>
+      <h2>Want results like these for <em>your</em> brand?</h2>
+      <p>If you're an event rental company or bridal brand that's tired of being invisible online, let's talk.</p>
+      <a class="btn btn-primary" href="contact.html">Get a Free Strategy Call</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 <span>B Social</span> Digital Marketing &middot; All rights reserved.</p>
+    <p style="margin-top:0.75rem;"><a href="https://www.instagram.com/bsocial_digitalmarketing/" target="_blank" rel="noopener" style="color:var(--pop);font-weight:500;">@bsocial_digitalmarketing</a> &nbsp;&middot;&nbsp; <a href="https://www.tiktok.com/@brooketheadsgirl" target="_blank" rel="noopener" style="color:var(--pop);font-weight:500;">@brooketheadsgirl</a></p>
+    <p style="margin-top:0.5rem;font-size:0.7rem;color:var(--muted);">built on matcha &amp; ambition &#x1F375;</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

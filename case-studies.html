@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Studies — B Social Digital Marketing</title>
+  <meta name="description" content="Real results from real clients. See how B Social helps brands grow with strategy-first digital marketing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .page-hero {
+      padding: 8rem 2rem 4rem;
+      max-width: var(--max);
+      margin: 0 auto;
+      margin-top: 64px;
+    }
+
+    .page-hero h1 { margin-bottom: 1rem; }
+    .page-hero p { color: var(--muted); max-width: 560px; font-size: 1.1rem; }
+
+    /* Card grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      border-color: var(--pop);
+      box-shadow: 0 4px 24px rgba(67, 85, 214, 0.08);
+    }
+
+    /* Featured cards span full width */
+    .card.featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      padding: 0;
+    }
+
+    .card.featured .card-body {
+      padding: 2.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .card.featured .card-stats-panel {
+      background: var(--bg);
+      padding: 2.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-left: 1px solid var(--border);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    /* Tag / service label */
+    .card-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--pop);
+      background: var(--pop-soft);
+      padding: 0.3rem 0.7rem;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+      width: fit-content;
+    }
+
+    .card-industry {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .card h2 {
+      font-size: 1.55rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .card h3 {
+      font-family: 'Archivo', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      line-height: 1.25;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .card-desc {
+      margin-bottom: 1.5rem;
+    }
+
+    /* Stats row inside regular cards */
+    .card-stats {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-top: auto;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .card-stat .number {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.35rem;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .card-stat .label {
+      font-size: 0.68rem;
+      color: var(--muted);
+      margin-top: 0.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* Featured card stats grid */
+    .mini-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .mini-stat .number {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .mini-stat .label {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* Link */
+    .card-link {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--pop);
+      margin-top: 1rem;
+      transition: opacity 0.2s;
+    }
+
+    .card-link:hover { opacity: 0.7; }
+
+    /* CTA banner */
+    .cta-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .cta-banner h2 { margin-bottom: 1rem; }
+    .cta-banner p { color: var(--muted); max-width: 480px; margin: 0 auto 2rem; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card.featured {
+        grid-template-columns: 1fr;
+      }
+
+      .card.featured .card-stats-panel {
+        border-left: none;
+        border-top: 1px solid var(--border);
+        border-radius: 0 0 var(--radius) var(--radius);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="bsocial." /></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="services.html">Services</a>
+      <a href="about.html">Our Story</a>
+      <a href="case-studies.html" class="active">Case Studies</a>
+      <a href="bridal.html">Bridal &amp; Events</a>
+      <a href="contact.html" class="nav-cta">Work With Us</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <p class="section-label fade-in">Case Studies</p>
+    <h1 class="fade-in">Real results from <em>real</em> clients</h1>
+    <p class="fade-in">See how we help brands go from invisible to fully booked with strategy-first digital marketing.</p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Case Study Cards Grid -->
+  <div class="cards-grid">
+
+    <!-- 1. AV Equipment Rental — FEATURED -->
+    <a href="case-study.html" class="card featured fade-in" style="text-decoration:none;color:inherit;">
+      <div class="card-body">
+        <span class="card-tag">Google Ads</span>
+        <h2>AV Equipment Rental NYC</h2>
+        <p class="card-desc">Took an NYC event rental company from zero online presence to fully booked with targeted search campaigns.</p>
+        <span class="card-link">Read case study &rarr;</span>
+      </div>
+      <div class="card-stats-panel">
+        <div class="mini-stats">
+          <div class="mini-stat">
+            <div class="number">1,149</div>
+            <div class="label">Qualified Leads</div>
+          </div>
+          <div class="mini-stat">
+            <div class="number">100K+</div>
+            <div class="label">Impressions</div>
+          </div>
+          <div class="mini-stat">
+            <div class="number">7.69%</div>
+            <div class="label">Click-through Rate</div>
+          </div>
+          <div class="mini-stat">
+            <div class="number">$4.34</div>
+            <div class="label">Avg. Cost Per Click</div>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 2. Drizly — FEATURED -->
+    <div class="card featured fade-in">
+      <div class="card-body">
+        <span class="card-tag">Meta &amp; Snapchat Ads</span>
+        <h2>Drizly</h2>
+        <p class="card-desc">Full-funnel paid social strategy that cut customer acquisition costs in half and drove a viral campaign with 15x return on ad spend.</p>
+      </div>
+      <div class="card-stats-panel">
+        <div class="mini-stats">
+          <div class="mini-stat">
+            <div class="number">50%</div>
+            <div class="label">Lower Acquisition Cost</div>
+          </div>
+          <div class="mini-stat">
+            <div class="number">15x</div>
+            <div class="label">Return on Ad Spend</div>
+          </div>
+          <div class="mini-stat">
+            <div class="number">&lt;$5</div>
+            <div class="label">Cost Per App Install</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Snow Monkey -->
+    <div class="card fade-in">
+      <span class="card-tag">Meta Ads &middot; SMS</span>
+      <h3>Snow Monkey</h3>
+      <p class="card-desc">Launched a full rebrand campaign with targeted ads, SMS, and influencer partnerships.</p>
+      <div class="card-stats">
+        <div class="card-stat">
+          <div class="number">3x</div>
+          <div class="label">Website Sales</div>
+        </div>
+        <div class="card-stat">
+          <div class="number">5</div>
+          <div class="label">Brand Partnerships</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. iFLY Indoor Skydiving -->
+    <div class="card fade-in">
+      <span class="card-tag">Paid Social</span>
+      <h3>iFLY Indoor Skydiving</h3>
+      <p class="card-desc">Full-funnel Facebook ad strategy with A/B testing and broad targeting that drove massive improvements across every metric.</p>
+      <div class="card-stats">
+        <div class="card-stat">
+          <div class="number">258%</div>
+          <div class="label">ROAS Increase</div>
+        </div>
+        <div class="card-stat">
+          <div class="number">60%</div>
+          <div class="label">Lower Cost Per Purchase</div>
+        </div>
+        <div class="card-stat">
+          <div class="number">20%</div>
+          <div class="label">CTR Increase</div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- CTA -->
+  <div class="section">
+    <div class="cta-banner fade-in">
+      <p class="section-label">Your Story Could Be Next</p>
+      <h2>Want results like <em>these</em>?</h2>
+      <p>Book a free strategy call and let's talk about what we can do for your brand.</p>
+      <a class="btn btn-primary" href="contact.html">Get a Free Strategy Call</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 <span>B Social</span> Digital Marketing &middot; All rights reserved.</p>
+    <p style="margin-top:0.75rem;"><a href="https://www.instagram.com/bsocial_digitalmarketing/" target="_blank" rel="noopener" style="color:var(--pop);font-weight:500;">@bsocial_digitalmarketing</a> &nbsp;&middot;&nbsp; <a href="https://www.tiktok.com/@brooketheadsgirl" target="_blank" rel="noopener" style="color:var(--pop);font-weight:500;">@brooketheadsgirl</a></p>
+    <p style="margin-top:0.5rem;font-size:0.7rem;color:var(--muted);">built on matcha &amp; ambition &#x1F375;</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

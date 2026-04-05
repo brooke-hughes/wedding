@@ -3,488 +3,465 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Wedding</title>
+  <title>B Social Digital Marketing — Your Brand Deserves Better Ads</title>
+  <meta name="description" content="B Social is a founder-led, strategy-first digital marketing agency built for brands that don't have time to blend in. Google Ads, Meta Ads, SEO." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    /* ── Reset & base ── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --cream:   #faf8f5;
-      --warm:    #f2ede6;
-      --stone:   #b5a89a;
-      --ink:     #2c2825;
-      --muted:   #7a6f68;
-      --accent:  #9b7e6b;
-      --line:    #e0d8d0;
-      --max:     860px;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--cream);
-      color: var(--ink);
-      font-family: 'Georgia', serif;
-      font-size: 17px;
-      line-height: 1.75;
-    }
-
-    /* ── Nav ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: var(--cream);
-      border-bottom: 1px solid var(--line);
-      padding: 0 2rem;
-      display: flex;
-      justify-content: center;
-      gap: 2.5rem;
-      height: 56px;
-      align-items: center;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--muted);
-      font-family: 'Helvetica Neue', sans-serif;
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-
-    nav a:hover { color: var(--ink); }
-
     /* ── Hero ── */
-    #hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 80px 2rem 4rem;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .eyebrow {
-      font-family: 'Helvetica Neue', sans-serif;
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--stone);
-      margin-bottom: 1.5rem;
-    }
-
-    h1 {
-      font-size: clamp(2.8rem, 7vw, 5.5rem);
-      font-weight: 400;
-      letter-spacing: -0.01em;
-      line-height: 1.1;
-      color: var(--ink);
-    }
-
-    .ampersand {
-      display: block;
-      font-size: clamp(1.5rem, 4vw, 2.8rem);
-      color: var(--stone);
-      margin: 0.2em 0;
-    }
-
-    .date-location {
-      margin-top: 2.5rem;
-      font-family: 'Helvetica Neue', sans-serif;
-      font-size: 13px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .divider {
-      display: inline-block;
-      margin: 0 1rem;
-      color: var(--line);
-    }
-
-    /* ── CTA buttons ── */
-    .cta-row {
-      display: flex;
-      gap: 1rem;
-      margin-top: 3rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.75rem 2rem;
-      font-family: 'Helvetica Neue', sans-serif;
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border: 1px solid var(--ink);
-      color: var(--ink);
-      background: transparent;
-      transition: background 0.2s, color 0.2s;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      background: var(--ink);
-      color: var(--cream);
-    }
-
-    .btn.filled {
-      background: var(--ink);
-      color: var(--cream);
-    }
-
-    .btn.filled:hover {
-      background: var(--accent);
-      border-color: var(--accent);
-    }
-
-    /* ── Sections ── */
-    section {
+    .hero {
+      padding: 7rem 2rem 4rem;
       max-width: var(--max);
       margin: 0 auto;
-      padding: 6rem 2rem;
-      border-bottom: 1px solid var(--line);
+      margin-top: 72px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: end;
     }
 
-    section:last-of-type { border-bottom: none; }
+    .hero-text h1 {
+      font-size: clamp(3.2rem, 7vw, 5.2rem);
+      line-height: 0.95;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      letter-spacing: -0.03em;
+    }
 
-    .section-label {
-      font-family: 'Helvetica Neue', sans-serif;
-      font-size: 11px;
+    .hero-text h1 .line-two {
+      display: inline;
+      font-style: italic;
+      background: linear-gradient(to top, rgba(196,133,138,0.22) 32%, transparent 32%);
+      padding-bottom: 4px;
+    }
+
+    .hero-text h1 .line-break { display: block; }
+
+    .hero-text .hero-sub {
+      font-size: 0.72rem;
+      font-weight: 600;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--stone);
+      color: var(--pop);
       margin-bottom: 2.5rem;
     }
 
-    h2 {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
+    .hero-text .hero-intro {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 400px;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-text .hero-intro em {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      color: var(--text);
+      font-size: 1.1rem;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-visual img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+      object-position: center center;
+      border-radius: 2px;
+    }
+
+    .hero-caption {
+      margin-top: 1rem;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--rose);
+    }
+
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 2rem 2rem; }
+      .hero-visual img { height: 400px; }
+    }
+
+    /* ── Story intro ── */
+    .story-intro {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 7rem 2rem;
+    }
+
+    .story-intro .big-text {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.35;
       font-weight: 400;
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-      color: var(--ink);
+      max-width: 800px;
     }
 
-    p { color: var(--muted); margin-bottom: 1rem; }
-    p:last-child { margin-bottom: 0; }
-
-    /* ── About: two columns ── */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      margin-top: 2rem;
-    }
-
-    .about-grid .person-name {
-      font-size: 1.05rem;
-      color: var(--ink);
-      margin-bottom: 0.75rem;
+    .story-intro .big-text em {
+      color: var(--pop);
       font-style: italic;
     }
 
-    @media (max-width: 600px) {
-      .about-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ── Timeline ── */
-    .timeline {
-      margin-top: 2rem;
-      position: relative;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 8px;
-      bottom: 8px;
-      width: 1px;
-      background: var(--line);
-    }
-
-    .timeline-item {
-      padding-left: 2rem;
-      padding-bottom: 2.5rem;
-      position: relative;
-    }
-
-    .timeline-item:last-child { padding-bottom: 0; }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -4px;
-      top: 8px;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--stone);
-    }
-
-    .timeline-time {
-      font-family: 'Helvetica Neue', sans-serif;
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--stone);
-      margin-bottom: 0.3rem;
-    }
-
-    .timeline-title {
-      font-size: 1.05rem;
-      color: var(--ink);
-      margin-bottom: 0.3rem;
-    }
-
-    .timeline-desc {
+    .story-intro .side-text {
       color: var(--muted);
       font-size: 0.95rem;
-      margin-bottom: 0;
+      line-height: 1.85;
+      max-width: 540px;
+      margin-top: 2.5rem;
+      margin-left: auto;
     }
 
-    /* ── Travel ── */
-    .travel-cards {
+    .story-intro .side-text strong {
+      color: var(--text);
+    }
+
+    @media (max-width: 768px) {
+      .story-intro { padding: 4rem 2rem; }
+      .story-intro .side-text { margin-left: 0; }
+    }
+
+    /* ── Services ── */
+    .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+
+    .service-cell {
+      padding: 0;
+    }
+
+    .service-cell .svc-icon {
+      margin-bottom: 1.25rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+      line-height: 1;
+      height: 56px;
+      display: flex;
+      align-items: center;
+    }
+
+    .service-cell .svc-icon svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    .service-cell h3 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-cell p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 700px) {
+      .services-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    /* ── Results strip ── */
+    .results-strip {
+      padding: 5rem 2rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .results-intro {
+      max-width: var(--max);
+      margin: 0 auto 3rem;
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .results-strip-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: left;
+    }
+
+    .result-cell .number {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(2.8rem, 5vw, 3.8rem);
+      font-weight: 400;
+      color: var(--pop);
+      line-height: 1;
+    }
+
+    .result-cell .label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-top: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 600px) {
+      .results-strip-inner { grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+    }
+
+    /* ── Industries ── */
+    .industries-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
       margin-top: 2rem;
     }
 
-    .travel-card {
-      background: var(--warm);
-      padding: 1.75rem;
-      border: 1px solid var(--line);
+    .ind-tag {
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.55rem 1.4rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      transition: all 0.25s;
     }
 
-    .travel-card-label {
-      font-family: 'Helvetica Neue', sans-serif;
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--stone);
-      margin-bottom: 0.5rem;
+    .ind-tag:hover { border-color: var(--rose); background: var(--rose-soft); }
+
+    /* ── Testimonial ── */
+    .testimonial-section {
+      padding: 8rem 2rem;
     }
 
-    .travel-card h3 {
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--ink);
-      margin-bottom: 0.5rem;
-    }
-
-    .travel-card p {
-      font-size: 0.9rem;
-      margin-bottom: 0;
-    }
-
-    .travel-card a {
-      display: inline-block;
-      margin-top: 0.75rem;
-      font-family: 'Helvetica Neue', sans-serif;
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid var(--accent);
-    }
-
-    /* ── Registry / RSVP links ── */
-    #links {
+    .testimonial-inner {
+      max-width: 680px;
+      margin: 0 auto;
       text-align: center;
-      padding: 5rem 2rem;
-      border-bottom: none;
     }
 
-    #links h2 { margin-bottom: 0.75rem; }
-    #links p  { margin-bottom: 2.5rem; }
-
-    .links-row {
-      display: flex;
-      gap: 1.25rem;
-      justify-content: center;
-      flex-wrap: wrap;
+    .testimonial-inner .quote-mark {
+      font-family: 'Instrument Serif', serif;
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--rose);
+      opacity: 0.5;
+      margin-bottom: -1rem;
     }
 
-    /* ── Footer ── */
-    footer {
-      text-align: center;
-      padding: 3rem 2rem;
-      font-family: 'Helvetica Neue', sans-serif;
-      font-size: 11px;
-      letter-spacing: 0.12em;
+    .testimonial-inner blockquote {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-style: italic;
+      line-height: 1.55;
+      color: var(--text);
+      margin-bottom: 2rem;
+    }
+
+    .testimonial-inner cite {
+      font-style: normal;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--stone);
-      border-top: 1px solid var(--line);
+      color: var(--muted);
+      display: block;
     }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--pop);
+      border-radius: 2px;
+      padding: 6rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section > * { position: relative; z-index: 1; }
+    .cta-section .section-label { color: rgba(255,255,255,0.6); }
+    .cta-section h2 { color: #fff; margin-bottom: 1rem; font-size: clamp(2rem, 4.5vw, 3rem); }
+    .cta-section h2 em { color: rgba(255,255,255,0.8); font-style: italic; }
+    .cta-section p { color: rgba(255,255,255,0.65); max-width: 420px; margin: 0 auto 2.5rem; font-size: 0.95rem; }
   </style>
 </head>
 <body>
 
-  <!-- ── Navigation ── -->
+  <!-- Nav -->
   <nav>
-    <a href="#about">About</a>
-    <a href="#timeline">Timeline</a>
-    <a href="#travel">Travel</a>
-    <a href="#links">Registry & RSVP</a>
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="bsocial." /></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="services.html">Services</a>
+      <a href="about.html">Our Story</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="bridal.html">Bridal &amp; Events</a>
+      <a href="contact.html" class="nav-cta">Work With Us</a>
+    </div>
   </nav>
 
-  <!-- ── Hero ── -->
-  <div id="hero">
-    <p class="eyebrow">We're getting married</p>
-    <h1>
-      First Name
-      <span class="ampersand">&amp;</span>
-      First Name
-    </h1>
-    <p class="date-location">
-      Month Day, Year
-      <span class="divider">·</span>
-      City, State
-    </p>
-    <div class="cta-row">
-      <a class="btn filled" href="#links">RSVP</a>
-      <a class="btn" href="#links">Registry</a>
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-text">
+      <p class="hero-sub fade-in">Digital Marketing Agency</p>
+      <h1 class="fade-in">
+        your brand deserves<span class="line-break"></span><span class="line-two">better ads</span>
+      </h1>
+      <p class="hero-intro fade-in">
+        We left the big agency world to give brands what they actually want &mdash; direct access to the person running your ads, fast turnaround, and <em>strategy that works.</em>
+      </p>
+      <div class="btn-row fade-in">
+        <a class="btn btn-primary" href="contact.html">Let's Talk</a>
+        <a class="btn" href="case-studies.html">See Our Work</a>
+      </div>
+    </div>
+    <div class="hero-visual fade-in">
+      <img src="laptopshot.png" alt="Working on strategy — B Social Digital Marketing" />
+      <p class="hero-caption">Est. 2020 &mdash; Sister-run</p>
     </div>
   </div>
 
-  <!-- ── About ── -->
-  <section id="about">
-    <p class="section-label">About Us</p>
-    <h2>Our Story</h2>
-    <p>
-      Share how you met, a favorite memory together, or what you love most about each other.
-      This is a great place for a short paragraph that sets the tone for your celebration.
-    </p>
-    <div class="about-grid">
-      <div>
-        <p class="person-name">Partner One</p>
-        <p>
-          A little bit about the first partner — their background, hobbies, what makes them
-          special. Keep it warm and personal.
-        </p>
+  <!-- Story Intro -->
+  <div class="story-intro">
+    <div class="big-text fade-in">
+      We spent years inside a big agency and kept hearing the same thing from brands: <em>"who is actually running my ads?"</em> So in 2020, we said forget it &mdash; let's build something <em>better.</em>
+    </div>
+    <div class="side-text fade-in">
+      So we built an agency around that &mdash; direct communication, fast turnaround, and real strategy from the people actually doing the work. In 2025 we expanded into bridal &amp; events after becoming brides ourselves and seeing firsthand how many <em>incredible</em> vendors were invisible online. Every strategy is hands-on, data-backed, and built specifically for your business. Not a template. <em>Yours.</em>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Services -->
+  <div class="section">
+    <p class="section-label fade-in">What We Do</p>
+    <h2 class="fade-in">We focus on three things &mdash; and we're <em>really good</em> at them</h2>
+    <div class="services-grid fade-in">
+      <div class="service-cell">
+        <div class="svc-icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="var(--pop)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="17" cy="17" r="10" style="stroke-dasharray:2,0;"/>
+            <path d="M24 25 L34 35" stroke-width="2.5"/>
+            <path d="M12 14 Q14 10, 20 13" opacity="0.4"/>
+          </svg>
+        </div>
+        <h3>Google Ads</h3>
+        <p>Show up first when people are actively searching for what you offer. We build campaigns around high-intent keywords that drive real leads.</p>
       </div>
-      <div>
-        <p class="person-name">Partner Two</p>
-        <p>
-          A little bit about the second partner — their background, hobbies, what makes them
-          special. Keep it warm and personal.
-        </p>
+      <div class="service-cell">
+        <div class="svc-icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="var(--pop)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="10" y="4" width="20" height="32" rx="4"/>
+            <line x1="17" y1="31" x2="23" y2="31"/>
+            <path d="M16 14 L16 22 M20 17 L20 22 M24 12 L24 22" stroke-width="2" opacity="0.5"/>
+          </svg>
+        </div>
+        <h3>Meta Ads</h3>
+        <p>Instagram &amp; Facebook campaigns that actually convert &mdash; not just likes and follows, but customers.</p>
+      </div>
+      <div class="service-cell">
+        <div class="svc-icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="var(--pop)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 34 Q10 28, 16 26 Q22 24, 26 18 Q30 12, 36 6" stroke-width="2"/>
+            <path d="M30 6 L36 6 L36 12"/>
+            <path d="M4 34 L36 34" opacity="0.25"/>
+          </svg>
+        </div>
+        <h3>SEO</h3>
+        <p>Organic visibility that compounds over time. Show up on Google without paying for every single click.</p>
       </div>
     </div>
-  </section>
+    <p class="fade-in" style="color:var(--muted);font-size:0.85rem;margin-top:2rem;">We also build custom packages. <a href="services.html" style="color:var(--pop);font-weight:600;">See all services &rarr;</a></p>
+  </div>
 
-  <!-- ── Timeline ── -->
-  <section id="timeline">
-    <p class="section-label">Day Of</p>
-    <h2>Timeline</h2>
-    <p>Here's a look at how the day will unfold.</p>
-    <div class="timeline">
-      <div class="timeline-item">
-        <p class="timeline-time">4:00 PM</p>
-        <p class="timeline-title">Guest Arrival</p>
-        <p class="timeline-desc">Doors open. Find your seat and enjoy a welcome drink.</p>
+  <!-- Results Strip -->
+  <div class="results-strip fade-in">
+    <p class="results-intro">We don't just talk strategy &mdash; here's what it actually looks like.</p>
+    <div class="results-strip-inner">
+      <div class="result-cell">
+        <div class="number">500K+</div>
+        <div class="label">Impressions</div>
       </div>
-      <div class="timeline-item">
-        <p class="timeline-time">4:30 PM</p>
-        <p class="timeline-title">Ceremony</p>
-        <p class="timeline-desc">Venue Name · Address</p>
+      <div class="result-cell">
+        <div class="number">15x</div>
+        <div class="label">Top ROAS</div>
       </div>
-      <div class="timeline-item">
-        <p class="timeline-time">5:30 PM</p>
-        <p class="timeline-title">Cocktail Hour</p>
-        <p class="timeline-desc">Celebrate with drinks and appetizers on the terrace.</p>
+      <div class="result-cell">
+        <div class="number">50%</div>
+        <div class="label">Cost reduction</div>
       </div>
-      <div class="timeline-item">
-        <p class="timeline-time">7:00 PM</p>
-        <p class="timeline-title">Dinner & Dancing</p>
-        <p class="timeline-desc">Join us in the reception hall for dinner, toasts, and dancing.</p>
-      </div>
-      <div class="timeline-item">
-        <p class="timeline-time">11:00 PM</p>
-        <p class="timeline-title">Send-Off</p>
-        <p class="timeline-desc">A grand farewell to end the night.</p>
+      <div class="result-cell">
+        <div class="number">1,149</div>
+        <div class="label">Leads, one client</div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- ── Travel ── -->
-  <section id="travel">
-    <p class="section-label">Getting Here</p>
-    <h2>Travel & Stay</h2>
-    <p>
-      We'd love for you to make a weekend of it. Here are a few options to help you
-      plan your trip.
-    </p>
-    <div class="travel-cards">
-      <div class="travel-card">
-        <p class="travel-card-label">Venue</p>
-        <h3>Venue Name</h3>
-        <p>123 Venue Street, City, State 00000</p>
-        <a href="https://maps.google.com" target="_blank" rel="noopener">Get directions →</a>
-      </div>
-      <div class="travel-card">
-        <p class="travel-card-label">Hotel Block</p>
-        <h3>Hotel Name</h3>
-        <p>
-          We've reserved a room block. Use code <strong>WEDDING</strong> when booking.
-          Rate available until Month Day.
-        </p>
-        <a href="#" target="_blank" rel="noopener">Book your room →</a>
-      </div>
-      <div class="travel-card">
-        <p class="travel-card-label">Nearby Stays</p>
-        <h3>Other Options</h3>
-        <p>
-          Additional hotels and rentals are available nearby. We're happy to share
-          recommendations — just reach out.
-        </p>
-      </div>
-      <div class="travel-card">
-        <p class="travel-card-label">Airport</p>
-        <h3>Nearest Airport</h3>
-        <p>
-          Airport Name (XXX) is approximately XX miles from the venue. Rideshare and
-          rental cars are both easy options.
-        </p>
-      </div>
+  <!-- Industries -->
+  <div class="section">
+    <p class="section-label fade-in">Who We Work With</p>
+    <h2 class="fade-in">If your industry is crowded, <em>we get it</em></h2>
+    <div class="industries-row fade-in">
+      <span class="ind-tag">Med Spas</span>
+      <span class="ind-tag">Wellness</span>
+      <span class="ind-tag">Beauty &amp; Skincare</span>
+      <span class="ind-tag">Wedding &amp; Bridal</span>
+      <span class="ind-tag">E-Commerce</span>
+      <span class="ind-tag">Local Business</span>
+      <span class="ind-tag">Health &amp; Fitness</span>
+      <span class="ind-tag">Hospitality</span>
+      <span class="ind-tag">Real Estate</span>
     </div>
-  </section>
+  </div>
 
-  <!-- ── Registry & RSVP ── -->
-  <section id="links">
-    <p class="section-label">Join Us</p>
-    <h2>Registry &amp; RSVP</h2>
-    <p>We can't wait to celebrate with you. RSVP by Month Day, Year.</p>
-    <div class="links-row">
-      <a class="btn filled"
-         href="https://www.zola.com/registry/YOUR-REGISTRY-SLUG"
-         target="_blank"
-         rel="noopener">
-        View Registry on Zola
-      </a>
-      <a class="btn"
-         href="https://www.zola.com/wedding/YOUR-WEDDING-SLUG/rsvp"
-         target="_blank"
-         rel="noopener">
-        RSVP
-      </a>
+  <!-- Testimonial -->
+  <div class="testimonial-section">
+    <div class="testimonial-inner fade-in">
+      <div class="quote-mark">&ldquo;</div>
+      <blockquote>
+        Almost a year ago our company was experiencing a lot of strategic problems when it came to our advertising on META. That was when we decided to reach out to Brooke and hire her directly to manage our META ads account. Since she has taken over, we have consistently met or exceeded goals. I couldn't recommend her help enough.
+      </blockquote>
+      <cite>John Macko, Sell GPU</cite>
     </div>
-  </section>
+  </div>
 
-  <!-- ── Footer ── -->
+  <!-- CTA -->
+  <div class="section">
+    <div class="cta-section fade-in">
+      <p class="section-label">Ready?</p>
+      <h2>Let's figure out what's <em>possible</em></h2>
+      <p>Book a free strategy call &mdash; no pitch deck, no pressure. Just a real conversation about your brand and where you want to go.</p>
+      <a class="btn" href="contact.html" style="background:#fff;color:var(--pop);border-color:#fff;">Book a Free Call</a>
+    </div>
+  </div>
+
   <footer>
-    <p>Name &amp; Name · Month Day, Year · City, State</p>
+    <p>&copy; 2026 <span>B Social</span> Digital Marketing &middot; All rights reserved.</p>
+    <p style="margin-top:0.75rem;"><a href="https://www.instagram.com/bsocial_digitalmarketing/" target="_blank" rel="noopener" style="color:var(--pop);font-weight:500;">@bsocial_digitalmarketing</a> &nbsp;&middot;&nbsp; <a href="https://www.tiktok.com/@brooketheadsgirl" target="_blank" rel="noopener" style="color:var(--pop);font-weight:500;">@brooketheadsgirl</a></p>
+    <p style="margin-top:0.5rem;font-size:0.7rem;color:var(--muted);">built on matcha &amp; ambition &#x1F375;</p>
   </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.05 });
+    document.querySelectorAll('.fade-in').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        el.classList.add('visible');
+      } else {
+        observer.observe(el);
+      }
+    });
+  </script>
 
 </body>
 </html>
