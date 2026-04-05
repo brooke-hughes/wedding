@@ -170,52 +170,6 @@
       .services-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     }
 
-    /* ── Results strip ── */
-    .results-strip {
-      padding: 5rem 2rem;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .results-intro {
-      max-width: var(--max);
-      margin: 0 auto 3rem;
-      font-family: 'Instrument Serif', serif;
-      font-size: 1.15rem;
-      font-style: italic;
-      color: var(--muted);
-    }
-
-    .results-strip-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-      text-align: left;
-    }
-
-    .result-cell .number {
-      font-family: 'Instrument Serif', serif;
-      font-size: clamp(2.8rem, 5vw, 3.8rem);
-      font-weight: 400;
-      color: var(--pop);
-      line-height: 1;
-    }
-
-    .result-cell .label {
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      margin-top: 0.75rem;
-      text-transform: uppercase;
-    }
-
-    @media (max-width: 600px) {
-      .results-strip-inner { grid-template-columns: repeat(2, 1fr); gap: 3rem; }
-    }
-
     /* ── Industries ── */
     .industries-row {
       display: flex;
@@ -338,8 +292,6 @@
     </div>
   </div>
 
-  <hr class="divider" />
-
   <!-- Services -->
   <div class="section">
     <p class="section-label fade-in">What We Do</p>
@@ -380,29 +332,6 @@
       </div>
     </div>
     <p class="fade-in" style="color:var(--muted);font-size:0.85rem;margin-top:2rem;">We also build custom packages. <a href="services.html" style="color:var(--pop);font-weight:600;">See all services &rarr;</a></p>
-  </div>
-
-  <!-- Results Strip -->
-  <div class="results-strip fade-in">
-    <p class="results-intro">We don't just talk strategy &mdash; here's what it actually looks like.</p>
-    <div class="results-strip-inner">
-      <div class="result-cell">
-        <div class="number">500K+</div>
-        <div class="label">Impressions</div>
-      </div>
-      <div class="result-cell">
-        <div class="number">15x</div>
-        <div class="label">Top ROAS</div>
-      </div>
-      <div class="result-cell">
-        <div class="number">50%</div>
-        <div class="label">Cost reduction</div>
-      </div>
-      <div class="result-cell">
-        <div class="number">1,149</div>
-        <div class="label">Leads, one client</div>
-      </div>
-    </div>
   </div>
 
   <!-- Industries -->
