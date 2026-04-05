@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study: Drizly — B Social Digital Marketing</title>
+  <meta name="description" content="How B Social built a full-funnel paid social strategy that cut Drizly's acquisition costs in half and drove a viral campaign with 15x ROAS." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .page-hero {
+      padding: 8rem 2rem 4rem;
+      max-width: var(--max);
+      margin: 0 auto;
+      margin-top: 64px;
+    }
+
+    .page-hero h1 { margin-bottom: 1rem; }
+    .page-hero p { color: var(--muted); max-width: 560px; font-size: 1.1rem; }
+
+    /* Client header */
+    .client-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .client-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.4rem;
+      color: var(--pop);
+    }
+
+    .client-info p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Overview cards */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin: 3rem 0;
+    }
+
+    .overview-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    .overview-card .label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .overview-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Story sections */
+    .story-section { margin-bottom: 3rem; }
+
+    .story-section h2 { margin-bottom: 1rem; }
+
+    .story-section p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      max-width: 720px;
+    }
+
+    .story-section ul {
+      list-style: none;
+      max-width: 720px;
+      margin: 1rem 0 1.5rem;
+    }
+
+    .story-section ul li {
+      padding: 0.4rem 0;
+      padding-left: 1.4rem;
+      position: relative;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .story-section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.75rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--pop);
+    }
+
+    /* Strategy cards */
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin: 2rem 0;
+      max-width: 720px;
+    }
+
+    .strategy-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+    }
+
+    .strategy-card h3 {
+      font-family: 'Archivo', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.5rem;
+      color: var(--pop);
+    }
+
+    .strategy-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 0;
+    }
+
+    /* Results highlight */
+    .results-highlight {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 3rem;
+      margin: 3rem 0;
+    }
+
+    .results-highlight h2 { margin-bottom: 0.5rem; }
+
+    .results-highlight > p {
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    /* Metric breakdown */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .metric-item {
+      border-left: 3px solid var(--pop);
+      padding-left: 1.25rem;
+    }
+
+    .metric-item .number {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--pop);
+    }
+
+    .metric-item .label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    .metric-item .context {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+      font-style: italic;
+    }
+
+    /* CTA */
+    .cta-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .cta-banner h2 { margin-bottom: 1rem; }
+    .cta-banner p { color: var(--muted); max-width: 480px; margin: 0 auto 2rem; }
+
+    /* ── Ad Gallery ── */
+    .ad-gallery {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .ad-phone {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .phone-frame {
+      background: #fff;
+      border-radius: 28px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.06);
+      overflow: hidden;
+      width: 280px;
+      position: relative;
+      transition: transform 0.3s;
+    }
+
+    .phone-frame:hover {
+      transform: translateY(-4px);
+    }
+
+    .phone-notch {
+      width: 100px;
+      height: 6px;
+      background: #e5e5e5;
+      border-radius: 10px;
+      margin: 10px auto 0;
+    }
+
+    .phone-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.65rem 0.85rem;
+    }
+
+    .phone-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--pop);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .phone-brand {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      line-height: 1.2;
+    }
+
+    .phone-sponsored {
+      font-size: 0.6rem;
+      color: #999;
+    }
+
+    .phone-dots {
+      margin-left: auto;
+      color: #999;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    .phone-media {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      position: relative;
+      background: #f0f0f0;
+    }
+
+    .phone-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .phone-actions {
+      display: flex;
+      gap: 1rem;
+      padding: 0.6rem 0.85rem;
+      font-size: 0.7rem;
+      color: #555;
+    }
+
+    .phone-caption {
+      padding: 0 0.85rem 0.85rem;
+      font-size: 0.72rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .ad-label-tag {
+      margin-top: 0.75rem;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pop);
+      background: var(--pop-soft);
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+    }
+
+    @media (max-width: 768px) {
+      .overview-grid { grid-template-columns: 1fr; }
+      .metrics-grid { grid-template-columns: 1fr; }
+      .strategy-grid { grid-template-columns: 1fr; }
+      .phone-frame { width: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="bsocial." /></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="services.html">Services</a>
+      <a href="about.html">Our Story</a>
+      <a href="case-studies.html" class="active">Case Studies</a>
+      <a href="bridal.html">Bridal &amp; Events</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html" class="nav-cta">Work With Us</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <p class="section-label fade-in">Case Study</p>
+    <h1 class="fade-in">From installs to <em>industry leader</em></h1>
+    <p class="fade-in">How we built a full-funnel paid social strategy that cut Drizly's acquisition costs in half and drove a viral campaign with 15x ROAS.</p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Client Info -->
+  <div class="section">
+    <div class="client-header fade-in">
+      <div class="client-logo">DZ</div>
+      <div class="client-info">
+        <h2 style="margin-bottom: 0.25rem;">Drizly</h2>
+        <p>Alcohol delivery app &mdash; on-demand e-commerce, acquired by Uber.</p>
+      </div>
+    </div>
+
+    <div class="overview-grid fade-in">
+      <div class="overview-card">
+        <div class="label">Industry</div>
+        <p>On-Demand Delivery / Alcohol E-Commerce</p>
+      </div>
+      <div class="overview-card">
+        <div class="label">Channels</div>
+        <p>Meta Ads (Facebook + Instagram) &amp; Snapchat Ads</p>
+      </div>
+      <div class="overview-card">
+        <div class="label">Focus</div>
+        <p>Full-Funnel Paid Social &amp; App Install Campaigns</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- The Challenge -->
+  <div class="section">
+    <div class="story-section fade-in">
+      <p class="section-label">The Problem</p>
+      <h2>Scaling installs without a <em>sustainable funnel</em></h2>
+      <p>
+        Drizly needed to scale user acquisition across paid social while keeping acquisition costs sustainable. Previous campaigns were driving installs but at inconsistent costs, with no clear full-funnel strategy connecting awareness to conversion.
+      </p>
+      <ul>
+        <li>Campaigns were driving installs but at inconsistent and unpredictable costs</li>
+        <li>No structured funnel connecting awareness to consideration to conversion</li>
+        <li>Creative was getting stale and frequency was climbing across audiences</li>
+        <li>Diminishing returns on spend as ad fatigue set in with no refresh strategy</li>
+      </ul>
+      <p>
+        The demand was there. The product-market fit was proven. But without a full-funnel architecture and a creative velocity engine, every dollar spent was working harder than it needed to.
+      </p>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- The Strategy -->
+  <div class="section">
+    <div class="story-section fade-in">
+      <p class="section-label">The Strategy</p>
+      <h2>Build the funnel, diversify the platforms, <em>go viral</em></h2>
+
+      <div class="strategy-grid">
+        <div class="strategy-card">
+          <h3>01. Full-Funnel Architecture</h3>
+          <p>Built a structured funnel from awareness through conversion. Top-of-funnel focused on reach and brand awareness with lifestyle content, mid-funnel drove engagement and consideration, bottom-funnel pushed high-intent retargeting for installs and first orders.</p>
+        </div>
+        <div class="strategy-card">
+          <h3>02. Platform Diversification</h3>
+          <p>Expanded beyond Meta into Snapchat Ads, tapping into a younger demographic that aligned with Drizly's target audience. Optimized creative and placements per platform rather than running identical ads everywhere.</p>
+        </div>
+        <div class="strategy-card">
+          <h3>03. Creative Velocity</h3>
+          <p>Rapid creative testing with seasonal hooks, cultural moments, and trend-jacking (holidays, game days, weekends). Kept ads feeling fresh and relevant to reduce ad fatigue and maintain low CPAs.</p>
+        </div>
+        <div class="strategy-card">
+          <h3>04. Viral Campaign Execution</h3>
+          <p>Launched a campaign that caught fire organically, driving a 15x return on ad spend. Leveraged UGC-style creative and shareable moments that extended reach far beyond paid impressions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- The Results -->
+  <div class="section">
+    <div class="results-highlight fade-in">
+      <p class="section-label">The Results</p>
+      <h2>Full-funnel paid social &mdash; <em>at scale</em></h2>
+      <p>A structured strategy that turned installs into a scalable, repeatable machine.</p>
+
+      <div class="metrics-grid">
+        <div class="metric-item">
+          <div class="number">50%</div>
+          <div class="label">Lower Acquisition Cost</div>
+          <div class="context">Cut customer acquisition cost in half vs. previous benchmarks</div>
+        </div>
+        <div class="metric-item">
+          <div class="number">15x</div>
+          <div class="label">Return on Ad Spend</div>
+          <div class="context">Viral campaign delivered massive returns</div>
+        </div>
+        <div class="metric-item">
+          <div class="number">&lt;$5</div>
+          <div class="label">Cost Per App Install</div>
+          <div class="context">Consistently under $5 across platforms</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Ad Creative Gallery -->
+  <div class="section">
+    <div class="story-section fade-in">
+      <p class="section-label">The Creative</p>
+      <h2>Ads we briefed, built &amp; <em>scaled</em></h2>
+      <p>Native-feeling creative designed for each platform &mdash; not repurposed, but purpose-built to drive installs.</p>
+    </div>
+
+    <!-- Single phone mockup centered -->
+    <div class="ad-gallery fade-in">
+      <div class="ad-phone">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-header">
+            <div class="phone-avatar">DZ</div>
+            <div>
+              <div class="phone-brand">Drizly</div>
+              <div class="phone-sponsored">Sponsored</div>
+            </div>
+            <div class="phone-dots">&bull;&bull;&bull;</div>
+          </div>
+          <div class="phone-media">
+            <img src="drizly.jpg" alt="Snapchat x Drizly ad creative showing the Drizly app" />
+          </div>
+          <div class="phone-actions">
+            <span>&#x2764;&#xFE0F; 3.8K</span>
+            <span>&#x1F4AC; 214</span>
+            <span>&#x1F501; 97</span>
+          </div>
+          <div class="phone-caption">Snapchat x Drizly &mdash; native-feeling ad creative that drove installs under $5.</div>
+        </div>
+        <div class="ad-label-tag">Static &middot; Snapchat</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Key Takeaways -->
+  <div class="section">
+    <div class="story-section fade-in">
+      <p class="section-label">Key Takeaways</p>
+      <h2>What made this <em>work</em></h2>
+      <p>
+        <strong>Platform matters.</strong> Snapchat wasn't an afterthought &mdash; it was a strategic play for a specific demographic. Meeting your audience where they actually are changes everything.
+      </p>
+      <p>
+        <strong>Creative freshness is non-negotiable.</strong> When you're spending at scale, creative fatigue is your biggest enemy. Constant iteration kept costs low and engagement high.
+      </p>
+      <p>
+        <strong>Full-funnel thinking scales.</strong> You can't just run conversion campaigns forever. Building awareness at the top creates a pool of warm audiences that convert cheaper at the bottom.
+      </p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="section">
+    <div class="cta-banner fade-in">
+      <p class="section-label">Your Turn</p>
+      <h2>Want results like these for <em>your</em> brand?</h2>
+      <p>If your ad account feels stuck or fragmented, let's talk. We'll audit it for free and show you what's possible.</p>
+      <a class="btn btn-primary" href="contact.html">Get a Free Strategy Call</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 <span>B Social</span> Digital Marketing &middot; All rights reserved.</p>
+    <p style="margin-top:0.75rem;"><a href="https://www.instagram.com/bsocial_digitalmarketing/" target="_blank" rel="noopener" style="color:var(--pop);font-weight:500;">@bsocial_digitalmarketing</a> &nbsp;&middot;&nbsp; <a href="https://www.tiktok.com/@brooketheadsgirl" target="_blank" rel="noopener" style="color:var(--pop);font-weight:500;">@brooketheadsgirl</a></p>
+    <p style="margin-top:0.5rem;font-size:0.7rem;color:var(--muted);">built on matcha &amp; ambition &#x1F375;</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

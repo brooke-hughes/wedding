@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study: iFLY Indoor Skydiving — B Social Digital Marketing</title>
+  <meta name="description" content="How B Social rebuilt iFLY's Facebook ad strategy with A/B testing and smart audience structure to drive a 258% ROAS increase." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .page-hero {
+      padding: 8rem 2rem 4rem;
+      max-width: var(--max);
+      margin: 0 auto;
+      margin-top: 64px;
+    }
+
+    .page-hero h1 { margin-bottom: 1rem; }
+    .page-hero p { color: var(--muted); max-width: 560px; font-size: 1.1rem; }
+
+    /* Client header */
+    .client-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .client-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.4rem;
+      color: var(--pop);
+    }
+
+    .client-info p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Overview cards */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin: 3rem 0;
+    }
+
+    .overview-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    .overview-card .label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .overview-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Story sections */
+    .story-section { margin-bottom: 3rem; }
+
+    .story-section h2 { margin-bottom: 1rem; }
+
+    .story-section p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      max-width: 720px;
+    }
+
+    .story-section ul {
+      list-style: none;
+      max-width: 720px;
+      margin: 1rem 0 1.5rem;
+    }
+
+    .story-section ul li {
+      padding: 0.4rem 0;
+      padding-left: 1.4rem;
+      position: relative;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .story-section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.75rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--pop);
+    }
+
+    /* Strategy cards */
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin: 2rem 0;
+      max-width: 720px;
+    }
+
+    .strategy-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+    }
+
+    .strategy-card h3 {
+      font-family: 'Archivo', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.5rem;
+      color: var(--pop);
+    }
+
+    .strategy-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 0;
+    }
+
+    /* Results highlight */
+    .results-highlight {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 3rem;
+      margin: 3rem 0;
+    }
+
+    .results-highlight h2 { margin-bottom: 0.5rem; }
+
+    .results-highlight > p {
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    /* Metric breakdown */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .metric-item {
+      border-left: 3px solid var(--pop);
+      padding-left: 1.25rem;
+    }
+
+    .metric-item .number {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--pop);
+    }
+
+    .metric-item .label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    .metric-item .context {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+      font-style: italic;
+    }
+
+    /* CTA */
+    .cta-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .cta-banner h2 { margin-bottom: 1rem; }
+    .cta-banner p { color: var(--muted); max-width: 480px; margin: 0 auto 2rem; }
+
+    /* ── Ad Gallery ── */
+    .ad-gallery {
+      margin-top: 2rem;
+    }
+
+    .ad-carousel {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 1rem 0 1.5rem;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .ad-carousel::-webkit-scrollbar { display: none; }
+
+    .ad-phone {
+      flex: 0 0 280px;
+      scroll-snap-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .phone-frame {
+      background: #fff;
+      border-radius: 28px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.06);
+      overflow: hidden;
+      width: 280px;
+      position: relative;
+      transition: transform 0.3s;
+    }
+
+    .phone-frame:hover {
+      transform: translateY(-4px);
+    }
+
+    .phone-notch {
+      width: 100px;
+      height: 6px;
+      background: #e5e5e5;
+      border-radius: 10px;
+      margin: 10px auto 0;
+    }
+
+    .phone-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.65rem 0.85rem;
+    }
+
+    .phone-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--pop);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .phone-brand {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      line-height: 1.2;
+    }
+
+    .phone-sponsored {
+      font-size: 0.6rem;
+      color: #999;
+    }
+
+    .phone-dots {
+      margin-left: auto;
+      color: #999;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    .phone-media {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      overflow: hidden;
+      position: relative;
+      background: #f0f0f0;
+    }
+
+    .phone-media img,
+    .phone-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .play-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.25);
+      color: #fff;
+      font-size: 2.5rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .play-overlay:hover {
+      background: rgba(0,0,0,0.4);
+    }
+
+    .phone-actions {
+      display: flex;
+      gap: 1rem;
+      padding: 0.6rem 0.85rem;
+      font-size: 0.7rem;
+      color: #555;
+    }
+
+    .phone-caption {
+      padding: 0 0.85rem 0.85rem;
+      font-size: 0.72rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .ad-label-tag {
+      margin-top: 0.75rem;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pop);
+      background: var(--pop-soft);
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+    }
+
+    /* Carousel controls */
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .carousel-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel-btn:hover {
+      border-color: var(--pop);
+      color: var(--pop);
+    }
+
+    .carousel-dots {
+      display: flex;
+      gap: 0.4rem;
+    }
+
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .carousel-dot.active {
+      background: var(--pop);
+      transform: scale(1.25);
+    }
+
+    @media (max-width: 768px) {
+      .overview-grid { grid-template-columns: 1fr; }
+      .metrics-grid { grid-template-columns: 1fr; }
+      .strategy-grid { grid-template-columns: 1fr; }
+      .ad-phone { flex: 0 0 260px; }
+      .phone-frame { width: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="bsocial." /></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="services.html">Services</a>
+      <a href="about.html">Our Story</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="bridal.html">Bridal &amp; Events</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html" class="nav-cta">Work With Us</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <p class="section-label fade-in">Case Study</p>
+    <h1 class="fade-in">From broad targeting to <em>record ROAS</em></h1>
+    <p class="fade-in">How we rebuilt iFLY's Facebook ad strategy with A/B testing and smart audience structure to drive a 258% ROAS increase.</p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Client Info -->
+  <div class="section">
+    <div class="client-header fade-in">
+      <div class="client-logo">iF</div>
+      <div class="client-info">
+        <h2 style="margin-bottom: 0.25rem;">iFLY Indoor Skydiving</h2>
+        <p>Entertainment &amp; experiences brand &mdash; indoor skydiving locations nationwide.</p>
+      </div>
+    </div>
+
+    <div class="overview-grid fade-in">
+      <div class="overview-card">
+        <div class="label">Industry</div>
+        <p>Entertainment &amp; Experiences</p>
+      </div>
+      <div class="overview-card">
+        <div class="label">Channels</div>
+        <p>Meta Ads (Facebook + Instagram)</p>
+      </div>
+      <div class="overview-card">
+        <div class="label">Focus</div>
+        <p>Full-Funnel Paid Social &amp; E-Commerce Optimization</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- The Challenge -->
+  <div class="section">
+    <div class="story-section fade-in">
+      <p class="section-label">The Problem</p>
+      <h2>An existing presence stuck in <em>inefficient loops</em></h2>
+      <p>
+        iFLY had an existing paid social presence but was struggling with inefficient spend and stagnating returns. The ad account relied heavily on narrow interest-based targeting that was limiting scale, creative was running too long without iteration, and there was no structured testing framework to identify what was actually working. Cost per purchase was climbing and ROAS was flat &mdash; the account needed a strategic reset.
+      </p>
+      <ul>
+        <li>Over-reliance on narrow interest targeting that capped reach and drove up costs</li>
+        <li>Creative running for weeks without iteration or fresh concepts</li>
+        <li>No structured A/B testing framework &mdash; decisions were based on gut, not data</li>
+        <li>Rising cost per purchase with no clear path to profitability improvement</li>
+        <li>Budget allocation wasn't weighted toward top-performing campaigns</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- The Strategy -->
+  <div class="section">
+    <div class="story-section fade-in">
+      <p class="section-label">The Strategy</p>
+      <h2>Restructure, test, scale &mdash; <em>data over gut</em></h2>
+
+      <div class="strategy-grid">
+        <div class="strategy-card">
+          <h3>01. Audience Restructure</h3>
+          <p>Shifted from narrow interest stacks to broad targeting paired with Smart Bidding. Let Meta's algorithm find the best converters within larger pools, dramatically improving delivery efficiency and lowering CPMs.</p>
+        </div>
+        <div class="strategy-card">
+          <h3>02. A/B Testing Framework</h3>
+          <p>Built a rigorous testing system: one variable at a time (hook, format, audience, offer). Every test had a clear hypothesis, success metric, and timeline. Winners scaled, losers killed fast.</p>
+        </div>
+        <div class="strategy-card">
+          <h3>03. Creative Diversification</h3>
+          <p>Moved beyond static images into video-first creative: testimonial compilations, POV flying footage, reaction videos, and seasonal hooks. Kept creative fresh to maintain engagement at scale.</p>
+        </div>
+        <div class="strategy-card">
+          <h3>04. Budget Reallocation</h3>
+          <p>Shifted spend toward proven performers and away from underperforming campaigns. Implemented rules-based scaling: increase budget on ad sets hitting ROAS targets, decrease on those falling behind.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- The Results -->
+  <div class="section">
+    <div class="results-highlight fade-in">
+      <p class="section-label">The Results</p>
+      <h2>Strategy meets scale &mdash; <em>the numbers</em></h2>
+      <p>A structured approach turned diminishing returns into record performance.</p>
+
+      <div class="metrics-grid">
+        <div class="metric-item">
+          <div class="number">+258%</div>
+          <div class="label">ROAS Increase</div>
+          <div class="context">Return on ad spend nearly tripled</div>
+        </div>
+        <div class="metric-item">
+          <div class="number">-60%</div>
+          <div class="label">Lower Cost Per Purchase</div>
+          <div class="context">Dramatic reduction in acquisition cost</div>
+        </div>
+        <div class="metric-item">
+          <div class="number">+20%</div>
+          <div class="label">CTR Increase</div>
+          <div class="context">Better creative drove higher engagement</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Ad Creative Gallery -->
+  <div class="section">
+    <div class="story-section fade-in">
+      <p class="section-label">The Creative</p>
+      <h2>Ads we briefed, built &amp; <em>scaled</em></h2>
+      <p>From seasonal campaigns to scroll-stopping testimonial videos — here's a look at the creative that actually performed.</p>
+    </div>
+
+    <!-- Phone carousel -->
+    <div class="ad-gallery fade-in">
+      <div class="ad-carousel" id="adCarousel">
+        <div class="ad-phone">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-header">
+              <div class="phone-avatar">iF</div>
+              <div>
+                <div class="phone-brand">iFLY Indoor Skydiving</div>
+                <div class="phone-sponsored">Sponsored</div>
+              </div>
+              <div class="phone-dots">&bull;&bull;&bull;</div>
+            </div>
+            <div class="phone-media">
+              <video src="ifly-ad-springbreak.mp4" playsinline muted loop></video>
+              <div class="play-overlay" onclick="this.parentElement.querySelector('video').play();this.style.display='none';">&#9654;</div>
+            </div>
+            <div class="phone-actions">
+              <span>&#x2764;&#xFE0F; 3.8K</span>
+              <span>&#x1F4AC; 245</span>
+              <span>&#x1F501; 91</span>
+            </div>
+            <div class="phone-caption">Spring Break campaign — seasonal hook that drove bookings during peak family travel.</div>
+          </div>
+          <div class="ad-label-tag">Video &middot; Seasonal</div>
+        </div>
+
+        <div class="ad-phone">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-header">
+              <div class="phone-avatar">iF</div>
+              <div>
+                <div class="phone-brand">iFLY Indoor Skydiving</div>
+                <div class="phone-sponsored">Sponsored</div>
+              </div>
+              <div class="phone-dots">&bull;&bull;&bull;</div>
+            </div>
+            <div class="phone-media">
+              <video src="ifly-ad-reviews-b.mp4" playsinline muted loop></video>
+              <div class="play-overlay" onclick="this.parentElement.querySelector('video').play();this.style.display='none';">&#9654;</div>
+            </div>
+            <div class="phone-actions">
+              <span>&#x2764;&#xFE0F; 2.6K</span>
+              <span>&#x1F4AC; 178</span>
+              <span>&#x1F501; 64</span>
+            </div>
+            <div class="phone-caption">Real customer reviews compiled into scroll-stopping testimonial ads.</div>
+          </div>
+          <div class="ad-label-tag">Video &middot; Social Proof</div>
+        </div>
+
+        <div class="ad-phone">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-header">
+              <div class="phone-avatar">iF</div>
+              <div>
+                <div class="phone-brand">iFLY Indoor Skydiving</div>
+                <div class="phone-sponsored">Sponsored</div>
+              </div>
+              <div class="phone-dots">&bull;&bull;&bull;</div>
+            </div>
+            <div class="phone-media">
+              <video src="ifly-ad-reviews-a.mp4" playsinline muted loop></video>
+              <div class="play-overlay" onclick="this.parentElement.querySelector('video').play();this.style.display='none';">&#9654;</div>
+            </div>
+            <div class="phone-actions">
+              <span>&#x2764;&#xFE0F; 2.1K</span>
+              <span>&#x1F4AC; 134</span>
+              <span>&#x1F501; 52</span>
+            </div>
+            <div class="phone-caption">A/B tested review format — different hooks, same authentic testimonials.</div>
+          </div>
+          <div class="ad-label-tag">Video &middot; A/B Test</div>
+        </div>
+      </div>
+
+      <!-- Carousel controls -->
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prevBtn" aria-label="Previous" onclick="scrollCarousel(-1)">&#8592;</button>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <button class="carousel-btn" id="nextBtn" aria-label="Next" onclick="scrollCarousel(1)">&#8594;</button>
+      </div>
+      <p style="text-align:center;font-size:0.75rem;color:var(--muted);margin-top:0.75rem;">Swipe or use arrows to browse &middot; Tap videos to play</p>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Key Takeaways -->
+  <div class="section">
+    <div class="story-section fade-in">
+      <p class="section-label">Key Takeaways</p>
+      <h2>What made this <em>work</em></h2>
+      <p>
+        <strong>Broad beats narrow at scale.</strong> Counterintuitive, but removing tight targeting constraints and letting the algorithm optimize actually outperformed hand-picked interest audiences.
+      </p>
+      <p>
+        <strong>Testing isn't optional &mdash; it's the strategy.</strong> Without a structured framework, you're just guessing. A/B testing turned iFLY's ad account from reactive to proactive.
+      </p>
+      <p>
+        <strong>Creative is the new targeting.</strong> When you go broad, your creative becomes the filter. The right video shown to a broad audience outperforms the wrong ad shown to a &ldquo;perfect&rdquo; audience every time.
+      </p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="section">
+    <div class="cta-banner fade-in">
+      <p class="section-label">Your Turn</p>
+      <h2>Want results like these for <em>your</em> brand?</h2>
+      <p>If your ad account feels stuck or fragmented, let's talk. We'll audit it for free and show you what's possible.</p>
+      <a class="btn btn-primary" href="contact.html">Get a Free Strategy Call</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 <span>B Social</span> Digital Marketing &middot; All rights reserved.</p>
+    <p style="margin-top:0.75rem;"><a href="https://www.instagram.com/bsocial_digitalmarketing/" target="_blank" rel="noopener" style="color:var(--pop);font-weight:500;">@bsocial_digitalmarketing</a> &nbsp;&middot;&nbsp; <a href="https://www.tiktok.com/@brooketheadsgirl" target="_blank" rel="noopener" style="color:var(--pop);font-weight:500;">@brooketheadsgirl</a></p>
+    <p style="margin-top:0.5rem;font-size:0.7rem;color:var(--muted);">built on matcha &amp; ambition &#x1F375;</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Carousel logic
+    const carousel = document.getElementById('adCarousel');
+    const phones = carousel.querySelectorAll('.ad-phone');
+    const dotsContainer = document.getElementById('carouselDots');
+
+    // Create dots
+    phones.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.onclick = () => scrollToSlide(i);
+      dotsContainer.appendChild(dot);
+    });
+
+    function scrollCarousel(dir) {
+      const phoneWidth = phones[0].offsetWidth + 24; // width + gap
+      carousel.scrollBy({ left: dir * phoneWidth, behavior: 'smooth' });
+    }
+
+    function scrollToSlide(i) {
+      const phoneWidth = phones[0].offsetWidth + 24;
+      carousel.scrollTo({ left: i * phoneWidth, behavior: 'smooth' });
+    }
+
+    // Update dots on scroll
+    carousel.addEventListener('scroll', () => {
+      const phoneWidth = phones[0].offsetWidth + 24;
+      const index = Math.round(carousel.scrollLeft / phoneWidth);
+      dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    });
+  </script>
+
+</body>
+</html>
