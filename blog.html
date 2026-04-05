@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — B Social Digital Marketing</title>
+  <meta name="description" content="Real talk about digital marketing. No fluff, no jargon — just what actually works for growing brands. Google Ads, Meta Ads, SEO, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .page-hero {
+      padding: 8rem 2rem 4rem;
+      max-width: var(--max);
+      margin: 0 auto;
+      margin-top: 64px;
+    }
+
+    .page-hero h1 { margin-bottom: 1rem; }
+    .page-hero p { color: var(--muted); max-width: 560px; font-size: 1.1rem; }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .blog-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .blog-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .blog-card-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--pop);
+      background: var(--pop-soft);
+      padding: 0.3rem 0.75rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      width: fit-content;
+    }
+
+    .blog-card h3 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 1.25;
+      margin-bottom: 0.75rem;
+    }
+
+    .blog-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+      flex: 1;
+    }
+
+    .blog-card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+    }
+
+    .blog-card-date {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .blog-card-link {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--pop);
+      letter-spacing: 0.04em;
+      transition: opacity 0.2s;
+    }
+
+    .blog-card-link:hover { opacity: 0.7; }
+
+    @media (max-width: 768px) {
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="bsocial." /></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="services.html">Services</a>
+      <a href="about.html">Our Story</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contact.html" class="nav-cta">Work With Us</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <p class="section-label fade-in">The Blog</p>
+    <h1 class="fade-in">Stuff that <em>actually</em> works.</h1>
+    <p class="fade-in">No recycled marketing advice. No 2,000-word posts that say nothing. Just the strategies, frameworks, and honest takes we use to grow real brands every day.</p>
+  </div>
+
+  <hr class="divider" />
+
+  <div class="section">
+    <div class="blog-grid">
+
+      <a href="blog/google-ads-not-converting.html" class="blog-card fade-in">
+        <span class="blog-card-tag">Strategy</span>
+        <h3>Why Your Google Ads Aren't Converting (And How to Fix It)</h3>
+        <p>I audit a lot of ad accounts. And I see the same three mistakes over and over again. Here's what's probably going wrong &mdash; and how to fix it today.</p>
+        <div class="blog-card-meta">
+          <span class="blog-card-date">March 18, 2026</span>
+          <span class="blog-card-link">Read &rarr;</span>
+        </div>
+      </a>
+
+      <a href="blog/creative-testing-framework.html" class="blog-card fade-in">
+        <span class="blog-card-tag">Meta Ads</span>
+        <h3>The Creative Testing Framework That Actually Works</h3>
+        <p>Most people test ads wrong. Too many variables, not enough budget per test, and zero structure. Here's the framework I use with every single client.</p>
+        <div class="blog-card-meta">
+          <span class="blog-card-date">March 4, 2026</span>
+          <span class="blog-card-link">Read &rarr;</span>
+        </div>
+      </a>
+
+      <a href="blog/med-spa-marketing-guide.html" class="blog-card fade-in">
+        <span class="blog-card-tag">Industry</span>
+        <h3>Digital Marketing for Med Spas: A No-BS Guide</h3>
+        <p>Med spas are everywhere right now, which means standing out is harder than ever. Here's exactly what's working &mdash; and what most med spas get wrong.</p>
+        <div class="blog-card-meta">
+          <span class="blog-card-date">February 19, 2026</span>
+          <span class="blog-card-link">Read &rarr;</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="section">
+    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 4rem 2rem; text-align: center;" class="fade-in">
+      <p class="section-label">Want More?</p>
+      <h2>Let's talk about <em>your</em> brand.</h2>
+      <p style="color: var(--muted); max-width: 480px; margin: 0 auto 2rem;">Reading is great, but results are better. Book a free strategy call and let's figure out what's actually going to move the needle for your business.</p>
+      <a class="btn btn-primary" href="contact.html">Book a Free Call</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 <span>B Social</span> Digital Marketing &middot; All rights reserved.</p>
+    <p style="margin-top:0.75rem;"><a href="https://www.instagram.com/bsocial_digitalmarketing/" target="_blank" rel="noopener" style="color:var(--pop);font-weight:500;">@bsocial_digitalmarketing</a> &nbsp;&middot;&nbsp; <a href="https://www.tiktok.com/@brooketheadsgirl" target="_blank" rel="noopener" style="color:var(--pop);font-weight:500;">@brooketheadsgirl</a></p>
+    <p style="margin-top:0.5rem;font-size:0.7rem;color:var(--muted);">built on matcha &amp; ambition &#x1F375;</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

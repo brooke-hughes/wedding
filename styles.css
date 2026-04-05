@@ -8,12 +8,12 @@
   --text:        #1a1715;
   --muted:       #7a7067;
   --accent:      #1a1715;
-  --pop:         #4355d6;
-  --pop-soft:    rgba(67, 85, 214, 0.10);
-  --rose:        #C4858A;
-  --rose-soft:   rgba(196, 133, 138, 0.12);
-  --gold:        #4355d6;
-  --gold-soft:   rgba(67, 85, 214, 0.08);
+  --pop:         #5DA644;
+  --pop-soft:    rgba(93, 166, 68, 0.10);
+  --rose:        #D94F8A;
+  --rose-soft:   rgba(217, 79, 138, 0.12);
+  --gold:        #5DA644;
+  --gold-soft:   rgba(93, 166, 68, 0.08);
   --max:         1100px;
   --radius:      3px;
 }

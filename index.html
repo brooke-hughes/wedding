@@ -33,7 +33,7 @@
     .hero-text h1 .line-two {
       display: inline;
       font-style: italic;
-      background: linear-gradient(to top, rgba(196,133,138,0.22) 32%, transparent 32%);
+      background: linear-gradient(to top, rgba(124,158,101,0.2) 32%, transparent 32%);
       padding-bottom: 4px;
     }
 
@@ -89,6 +89,69 @@
       .hero-visual img { height: 400px; }
     }
 
+    /* ── Logo bar ── */
+    .logo-bar {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 3rem 2rem 1rem;
+      overflow: hidden;
+    }
+
+    .logo-bar-label {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      opacity: 0.7;
+    }
+
+    .logo-scroll {
+      display: flex;
+      animation: logoScroll 30s linear infinite;
+      width: max-content;
+    }
+
+    .logo-scroll:hover {
+      animation-play-state: paused;
+    }
+
+    .logo-set {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      padding-right: 3rem;
+    }
+
+    .logo-set span {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.15rem;
+      color: var(--text);
+      opacity: 0.3;
+      transition: opacity 0.3s;
+      white-space: nowrap;
+      letter-spacing: 0.01em;
+    }
+
+    .logo-set span:hover { opacity: 0.7; }
+
+    .logo-set .dot {
+      font-family: 'Archivo', sans-serif;
+      font-size: 0.5rem;
+      opacity: 0.15;
+    }
+
+    @keyframes logoScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @media (max-width: 600px) {
+      .logo-set { gap: 2rem; padding-right: 2rem; }
+      .logo-set span { font-size: 0.95rem; }
+    }
+
     /* ── Story intro ── */
     .story-intro {
       max-width: var(--max);
@@ -127,6 +190,66 @@
       .story-intro .side-text { margin-left: 0; }
     }
 
+    /* ── Process / Framework ── */
+    .process-section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .process-step {
+      position: relative;
+      padding: 2rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .process-step:hover {
+      border-color: var(--pop);
+      transform: translateY(-3px);
+    }
+
+    .process-step .step-num {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2.2rem;
+      color: var(--pop);
+      opacity: 0.3;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .process-step h3 {
+      font-family: 'Archivo', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.6rem;
+    }
+
+    .process-step p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    @media (max-width: 768px) {
+      .process-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 500px) {
+      .process-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── Services ── */
     .services-grid {
       display: grid;
@@ -137,6 +260,11 @@
 
     .service-cell {
       padding: 0;
+      transition: transform 0.3s;
+    }
+
+    .service-cell:hover {
+      transform: translateY(-3px);
     }
 
     .service-cell .svc-icon {
@@ -154,6 +282,15 @@
       height: 40px;
     }
 
+    .service-cell .svc-outcome {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--pop);
+      margin-bottom: 0.4rem;
+    }
+
     .service-cell h3 {
       font-family: 'Instrument Serif', serif;
       font-size: 1.6rem;
@@ -168,6 +305,53 @@
 
     @media (max-width: 700px) {
       .services-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    /* ── Results counter strip ── */
+    .results-counter {
+      background: var(--pop);
+      border-radius: 2px;
+      padding: 4rem 2rem;
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .results-counter-label {
+      text-align: center;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 2.5rem;
+    }
+
+    .results-counter-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .counter-item .counter-number {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .counter-item .counter-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-top: 0.75rem;
+    }
+
+    @media (max-width: 600px) {
+      .results-counter-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     }
 
     /* ── Industries ── */
@@ -188,7 +372,61 @@
       transition: all 0.25s;
     }
 
-    .ind-tag:hover { border-color: var(--rose); background: var(--rose-soft); }
+    .ind-tag:hover { border-color: var(--pop); background: var(--pop-soft); }
+
+    /* ── Founders ── */
+    .founders-section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    .founders-inner {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .founders-img img {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: var(--radius);
+    }
+
+    .founders-text .founders-label {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--pop);
+      margin-bottom: 1rem;
+    }
+
+    .founders-text h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      margin-bottom: 1rem;
+    }
+
+    .founders-text p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .founders-text .founders-sig {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--pop);
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .founders-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .founders-img img { width: 100%; height: 250px; }
+    }
 
     /* ── Testimonial ── */
     .testimonial-section {
@@ -229,6 +467,233 @@
       display: block;
     }
 
+    /* ── Partner badges ── */
+    .partners-bar {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem 5rem;
+      text-align: center;
+    }
+
+    .partners-bar-label {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      opacity: 0.7;
+    }
+
+    .partners-badges {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .partner-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--muted);
+      opacity: 0.6;
+      transition: opacity 0.3s;
+    }
+
+    .partner-badge:hover { opacity: 1; }
+
+    .partner-badge svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    /* ── Content teaser ── */
+    .content-teaser {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    .content-teaser-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .content-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: border-color 0.3s, transform 0.3s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .content-card:hover {
+      border-color: var(--pop);
+      transform: translateY(-3px);
+    }
+
+    .content-card .cc-type {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 0.75rem;
+    }
+
+    .content-card h3 {
+      font-family: 'Archivo', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+    }
+
+    .content-card p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 700px) {
+      .content-teaser-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Freebie / Lead Magnet ── */
+    .freebie-section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    .freebie-inner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+
+    .freebie-content {
+      padding: 3.5rem;
+    }
+
+    .freebie-content .freebie-badge {
+      display: inline-block;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--pop);
+      padding: 0.35rem 0.8rem;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+    }
+
+    .freebie-content h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin-bottom: 0.75rem;
+      line-height: 1.15;
+    }
+
+    .freebie-content .freebie-desc {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .freebie-content .freebie-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .freebie-content .freebie-list li {
+      font-size: 0.82rem;
+      color: var(--muted);
+      padding: 0.35rem 0;
+      padding-left: 1.4rem;
+      position: relative;
+    }
+
+    .freebie-content .freebie-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--pop);
+      font-weight: 700;
+    }
+
+    .freebie-form {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .freebie-form input {
+      flex: 1;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.85rem 1rem;
+      font-family: 'Archivo', sans-serif;
+      font-size: 0.85rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .freebie-form input:focus { border-color: var(--pop); }
+    .freebie-form input::placeholder { color: #b0a89d; }
+
+    .freebie-visual {
+      background: var(--pop);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .freebie-visual .fv-icon {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+    }
+
+    .freebie-visual h3 {
+      color: #fff;
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.5rem;
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+    }
+
+    .freebie-visual p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 768px) {
+      .freebie-inner { grid-template-columns: 1fr; }
+      .freebie-content { padding: 2.5rem; }
+      .freebie-form { flex-direction: column; }
+      .freebie-visual { padding: 2.5rem; }
+    }
+
     /* ── CTA ── */
     .cta-section {
       background: var(--pop);
@@ -257,6 +722,7 @@
       <a href="about.html">Our Story</a>
       <a href="case-studies.html">Case Studies</a>
       <a href="bridal.html">Bridal &amp; Events</a>
+      <a href="blog.html">Blog</a>
       <a href="contact.html" class="nav-cta">Work With Us</a>
     </div>
   </nav>
@@ -282,6 +748,59 @@
     </div>
   </div>
 
+  <!-- Client Logo Bar -->
+  <div class="logo-bar fade-in">
+    <p class="logo-bar-label">Some brands we've worked with</p>
+    <div class="logo-scroll">
+      <div class="logo-set">
+        <span>Drizly</span><span class="dot">&bull;</span>
+        <span>Drunk Elephant</span><span class="dot">&bull;</span>
+        <span>JLO Beauty</span><span class="dot">&bull;</span>
+        <span>7 For All Mankind</span><span class="dot">&bull;</span>
+        <span>Snow Monkey</span><span class="dot">&bull;</span>
+        <span>Hill House Home</span><span class="dot">&bull;</span>
+        <span>Rocketbook</span><span class="dot">&bull;</span>
+        <span>Lorna Jane</span><span class="dot">&bull;</span>
+        <span>Beach Bunny</span><span class="dot">&bull;</span>
+        <span>iFLY</span><span class="dot">&bull;</span>
+        <span>Cincoro Tequila</span><span class="dot">&bull;</span>
+        <span>DERMAdoctor</span><span class="dot">&bull;</span>
+        <span>Unplug</span><span class="dot">&bull;</span>
+        <span>Splendid</span><span class="dot">&bull;</span>
+        <span>Sell GPU</span><span class="dot">&bull;</span>
+        <span>Planet Blue</span><span class="dot">&bull;</span>
+        <span>Lancer Skincare</span><span class="dot">&bull;</span>
+        <span>Queen V</span><span class="dot">&bull;</span>
+        <span>City Mattress</span><span class="dot">&bull;</span>
+        <span>Chipoys</span><span class="dot">&bull;</span>
+        <span>Filterbaby</span><span class="dot">&bull;</span>
+      </div>
+      <div class="logo-set" aria-hidden="true">
+        <span>Drizly</span><span class="dot">&bull;</span>
+        <span>Drunk Elephant</span><span class="dot">&bull;</span>
+        <span>JLO Beauty</span><span class="dot">&bull;</span>
+        <span>7 For All Mankind</span><span class="dot">&bull;</span>
+        <span>Snow Monkey</span><span class="dot">&bull;</span>
+        <span>Hill House Home</span><span class="dot">&bull;</span>
+        <span>Rocketbook</span><span class="dot">&bull;</span>
+        <span>Lorna Jane</span><span class="dot">&bull;</span>
+        <span>Beach Bunny</span><span class="dot">&bull;</span>
+        <span>iFLY</span><span class="dot">&bull;</span>
+        <span>Cincoro Tequila</span><span class="dot">&bull;</span>
+        <span>DERMAdoctor</span><span class="dot">&bull;</span>
+        <span>Unplug</span><span class="dot">&bull;</span>
+        <span>Splendid</span><span class="dot">&bull;</span>
+        <span>Sell GPU</span><span class="dot">&bull;</span>
+        <span>Planet Blue</span><span class="dot">&bull;</span>
+        <span>Lancer Skincare</span><span class="dot">&bull;</span>
+        <span>Queen V</span><span class="dot">&bull;</span>
+        <span>City Mattress</span><span class="dot">&bull;</span>
+        <span>Chipoys</span><span class="dot">&bull;</span>
+        <span>Filterbaby</span><span class="dot">&bull;</span>
+      </div>
+    </div>
+  </div>
+
   <!-- Story Intro -->
   <div class="story-intro">
     <div class="big-text fade-in">
@@ -289,6 +808,34 @@
     </div>
     <div class="side-text fade-in">
       So we built an agency around that &mdash; direct communication, fast turnaround, and real strategy from the people actually doing the work. In 2025 we expanded into bridal &amp; events after becoming brides ourselves and seeing firsthand how many <em>incredible</em> vendors were invisible online. Every strategy is hands-on, data-backed, and built specifically for your business. Not a template. <em>Yours.</em>
+    </div>
+  </div>
+
+  <!-- The B Social Method -->
+  <div class="process-section">
+    <p class="section-label fade-in">How We Work</p>
+    <h2 class="fade-in">The B Social Method</h2>
+    <div class="process-grid fade-in">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <h3>Stalk (Nicely)</h3>
+        <p>We deep-dive into your brand, your competitors, and your audience. Think of it as strategic snooping &mdash; we find what's working, what's not, and what everyone else is missing.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <h3>Game Plan</h3>
+        <p>No recycled playbooks here. We build a custom strategy around your goals, your budget, and your people &mdash; not some other brand's leftovers.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <h3>Go Live</h3>
+        <p>We launch fast and watch the data like hawks. You'll always know exactly what's running, what it's costing, and why we're doing it.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <h3>Obsess &amp; Improve</h3>
+        <p>We don't "set it and forget it" &mdash; we test, tweak, and optimize every single week. Your ads should get better with age, like fine wine (or us).</p>
+      </div>
     </div>
   </div>
 
@@ -305,6 +852,7 @@
             <path d="M12 14 Q14 10, 20 13" opacity="0.4"/>
           </svg>
         </div>
+        <p class="svc-outcome">Get Found</p>
         <h3>Google Ads</h3>
         <p>Show up first when people are actively searching for what you offer. We build campaigns around high-intent keywords that drive real leads.</p>
       </div>
@@ -316,6 +864,7 @@
             <path d="M16 14 L16 22 M20 17 L20 22 M24 12 L24 22" stroke-width="2" opacity="0.5"/>
           </svg>
         </div>
+        <p class="svc-outcome">Get Customers</p>
         <h3>Meta Ads</h3>
         <p>Instagram &amp; Facebook campaigns that actually convert &mdash; not just likes and follows, but customers.</p>
       </div>
@@ -327,11 +876,33 @@
             <path d="M4 34 L36 34" opacity="0.25"/>
           </svg>
         </div>
+        <p class="svc-outcome">Get Seen</p>
         <h3>SEO</h3>
         <p>Organic visibility that compounds over time. Show up on Google without paying for every single click.</p>
       </div>
     </div>
     <p class="fade-in" style="color:var(--muted);font-size:0.85rem;margin-top:2rem;">We also build custom packages. <a href="services.html" style="color:var(--pop);font-weight:600;">See all services &rarr;</a></p>
+  </div>
+
+  <!-- Results Counter Strip -->
+  <div class="section" style="padding-bottom: 2rem;">
+    <div class="results-counter fade-in">
+      <p class="results-counter-label">By the numbers</p>
+      <div class="results-counter-grid">
+        <div class="counter-item">
+          <div class="counter-number" data-target="1000" data-suffix="+">0</div>
+          <div class="counter-label">Campaigns Launched</div>
+        </div>
+        <div class="counter-item">
+          <div class="counter-number" data-target="5" data-suffix="x+">0</div>
+          <div class="counter-label">Avg. ROAS</div>
+        </div>
+        <div class="counter-item">
+          <div class="counter-number" data-target="100" data-suffix="M+">0</div>
+          <div class="counter-label">Impressions Driven</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Industries -->
@@ -351,6 +922,21 @@
     </div>
   </div>
 
+  <!-- Meet the Founders -->
+  <div class="founders-section">
+    <div class="founders-inner fade-in">
+      <div class="founders-img">
+        <img src="sisters-childhood.jpg" alt="Brooke and her sister — the founders of B Social" />
+      </div>
+      <div class="founders-text">
+        <p class="founders-label">Meet Us</p>
+        <h2>The sisters behind <em>the strategy</em></h2>
+        <p>We're the ones in your ad account every day &mdash; no hand-offs, no junior teams, no waiting weeks for a report that should take minutes.</p>
+        <p class="founders-sig">&mdash; Brooke &amp; team</p>
+      </div>
+    </div>
+  </div>
+
   <!-- Testimonial -->
   <div class="testimonial-section">
     <div class="testimonial-inner fade-in">
@@ -359,6 +945,77 @@
         Almost a year ago our company was experiencing a lot of strategic problems when it came to our advertising on META. That was when we decided to reach out to Brooke and hire her directly to manage our META ads account. Since she has taken over, we have consistently met or exceeded goals. I couldn't recommend her help enough.
       </blockquote>
       <cite>John Macko, Sell GPU</cite>
+    </div>
+  </div>
+
+  <!-- Partner Badges -->
+  <div class="partners-bar fade-in">
+    <p class="partners-bar-label">Certified &amp; Trusted</p>
+    <div class="partners-badges">
+      <div class="partner-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L3 7v6c0 5.25 3.75 10.15 9 11.25C17.25 23.15 21 18.25 21 13V7l-9-5z"/><path d="M9 12l2 2 4-4"/></svg>
+        Google Partner
+      </div>
+      <div class="partner-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L3 7v6c0 5.25 3.75 10.15 9 11.25C17.25 23.15 21 18.25 21 13V7l-9-5z"/><path d="M9 12l2 2 4-4"/></svg>
+        Meta Business Partner
+      </div>
+      <div class="partner-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L3 7v6c0 5.25 3.75 10.15 9 11.25C17.25 23.15 21 18.25 21 13V7l-9-5z"/><path d="M9 12l2 2 4-4"/></svg>
+        Google Analytics Certified
+      </div>
+    </div>
+  </div>
+
+  <!-- Content / Tips Teaser -->
+  <div class="content-teaser">
+    <p class="section-label fade-in">From The Blog</p>
+    <h2 class="fade-in">Tips we actually <em>use</em></h2>
+    <div class="content-teaser-grid fade-in">
+      <a class="content-card" href="blog/google-ads-not-converting.html">
+        <p class="cc-type">Strategy</p>
+        <h3>Why Your Google Ads Aren't Converting (And How to Fix It)</h3>
+        <p>The 3 most common mistakes we see when auditing new client accounts.</p>
+      </a>
+      <a class="content-card" href="blog/creative-testing-framework.html">
+        <p class="cc-type">Meta Ads</p>
+        <h3>The Creative Testing Framework That Actually Works</h3>
+        <p>How we structure ad creative testing to find winners fast without blowing through budget.</p>
+      </a>
+      <a class="content-card" href="blog/med-spa-marketing-guide.html">
+        <p class="cc-type">Industry</p>
+        <h3>Digital Marketing for Med Spas: A No-BS Guide</h3>
+        <p>What's working right now for med spas on Google and Meta &mdash; from someone who manages them daily.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- Free Download / Lead Magnet -->
+  <div class="freebie-section">
+    <div class="freebie-inner fade-in">
+      <div class="freebie-content">
+        <span class="freebie-badge">Free Download</span>
+        <h2>The Ad Account Audit Checklist</h2>
+        <p class="freebie-desc">The same checklist we use when onboarding every new client. Find out what's wasting your budget in 15 minutes.</p>
+        <ul class="freebie-list">
+          <li>Google Ads account health check (12 points)</li>
+          <li>Meta Ads setup &amp; tracking audit</li>
+          <li>Budget allocation red flags to look for</li>
+          <li>Quick wins you can fix today</li>
+        </ul>
+        <form class="freebie-form" action="https://formspree.io/f/mdappwoy" method="POST">
+          <input type="hidden" name="_subject" value="New Checklist Download Request" />
+          <input type="hidden" name="_next" value="https://bsocialdigital.com/checklist-thanks.html" />
+          <input type="hidden" name="form_type" value="checklist_download" />
+          <input type="email" name="email" placeholder="Your email" required />
+          <button type="submit" class="btn btn-primary" style="white-space:nowrap;">Send It</button>
+        </form>
+      </div>
+      <div class="freebie-visual">
+        <div class="fv-icon">📋</div>
+        <h3>Stop guessing.<br/>Start auditing.</h3>
+        <p>PDF &middot; Free &middot; No fluff</p>
+      </div>
     </div>
   </div>
 
@@ -379,6 +1036,7 @@
   </footer>
 
   <script>
+    /* ── Fade-in on scroll ── */
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.05 });
@@ -389,6 +1047,44 @@
       } else {
         observer.observe(el);
       }
+    });
+
+    /* ── Counter animation ── */
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        if (el.dataset.counted) return;
+        el.dataset.counted = 'true';
+
+        const target = parseInt(el.dataset.target);
+        const suffix = el.dataset.suffix || '';
+        const prefix = el.dataset.prefix || '';
+        const duration = 2000;
+        const start = performance.now();
+
+        function update(now) {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(eased * target);
+
+          if (target >= 1000) {
+            el.textContent = prefix + current.toLocaleString() + suffix;
+          } else {
+            el.textContent = prefix + current + suffix;
+          }
+
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          }
+        }
+        requestAnimationFrame(update);
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.counter-number').forEach(el => {
+      counterObserver.observe(el);
     });
   </script>
 
