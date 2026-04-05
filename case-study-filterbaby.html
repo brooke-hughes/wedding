@@ -210,10 +210,208 @@
     .cta-banner h2 { margin-bottom: 1rem; }
     .cta-banner p { color: var(--muted); max-width: 480px; margin: 0 auto 2rem; }
 
+    /* ── Ad Gallery ── */
+    .ad-gallery {
+      margin-top: 2rem;
+    }
+
+    .ad-carousel {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 1rem 0 1.5rem;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .ad-carousel::-webkit-scrollbar { display: none; }
+
+    .ad-phone {
+      flex: 0 0 280px;
+      scroll-snap-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .phone-frame {
+      background: #fff;
+      border-radius: 28px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.06);
+      overflow: hidden;
+      width: 280px;
+      position: relative;
+      transition: transform 0.3s;
+    }
+
+    .phone-frame:hover {
+      transform: translateY(-4px);
+    }
+
+    .phone-notch {
+      width: 100px;
+      height: 6px;
+      background: #e5e5e5;
+      border-radius: 10px;
+      margin: 10px auto 0;
+    }
+
+    .phone-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.65rem 0.85rem;
+    }
+
+    .phone-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--pop);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .phone-brand {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      line-height: 1.2;
+    }
+
+    .phone-sponsored {
+      font-size: 0.6rem;
+      color: #999;
+    }
+
+    .phone-dots {
+      margin-left: auto;
+      color: #999;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    .phone-media {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      position: relative;
+      background: #f0f0f0;
+    }
+
+    .phone-media img,
+    .phone-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .play-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.25);
+      color: #fff;
+      font-size: 2.5rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .play-overlay:hover {
+      background: rgba(0,0,0,0.4);
+    }
+
+    .phone-actions {
+      display: flex;
+      gap: 1rem;
+      padding: 0.6rem 0.85rem;
+      font-size: 0.7rem;
+      color: #555;
+    }
+
+    .phone-caption {
+      padding: 0 0.85rem 0.85rem;
+      font-size: 0.72rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .ad-label-tag {
+      margin-top: 0.75rem;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pop);
+      background: var(--pop-soft);
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+    }
+
+    /* Carousel controls */
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .carousel-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel-btn:hover {
+      border-color: var(--pop);
+      color: var(--pop);
+    }
+
+    .carousel-dots {
+      display: flex;
+      gap: 0.4rem;
+    }
+
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .carousel-dot.active {
+      background: var(--pop);
+      transform: scale(1.25);
+    }
+
     @media (max-width: 768px) {
       .overview-grid { grid-template-columns: 1fr; }
       .metrics-grid { grid-template-columns: 1fr; }
       .strategy-grid { grid-template-columns: 1fr; }
+      .ad-phone { flex: 0 0 260px; }
+      .phone-frame { width: 260px; }
     }
   </style>
 </head>
@@ -343,6 +541,176 @@
 
   <hr class="divider" />
 
+  <!-- Ad Creative Gallery -->
+  <div class="section">
+    <div class="story-section fade-in">
+      <p class="section-label">The Creative</p>
+      <h2>Ads we briefed, built &amp; <em>scaled</em></h2>
+      <p>From authority-driven static ads to scroll-stopping UGC video — here's a look at the creative that actually performed.</p>
+    </div>
+
+    <!-- Phone carousel -->
+    <div class="ad-gallery fade-in">
+      <div class="ad-carousel" id="adCarousel">
+        <div class="ad-phone">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-header">
+              <div class="phone-avatar">FB</div>
+              <div>
+                <div class="phone-brand">Filterbaby</div>
+                <div class="phone-sponsored">Sponsored</div>
+              </div>
+              <div class="phone-dots">•••</div>
+            </div>
+            <div class="phone-media">
+              <img src="fb-ad-drdorfman.png" alt="Dr. Dorfman authority endorsement ad" />
+            </div>
+            <div class="phone-actions">
+              <span>&#x2764;&#xFE0F; 2.4K</span>
+              <span>&#x1F4AC; 187</span>
+              <span>&#x1F501; 56</span>
+            </div>
+            <div class="phone-caption">Authority-first. Whitelisted from a real dermatologist.</div>
+          </div>
+          <div class="ad-label-tag">Static &middot; Authority</div>
+        </div>
+
+        <div class="ad-phone">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-header">
+              <div class="phone-avatar">FB</div>
+              <div>
+                <div class="phone-brand">Filterbaby</div>
+                <div class="phone-sponsored">Sponsored</div>
+              </div>
+              <div class="phone-dots">•••</div>
+            </div>
+            <div class="phone-media">
+              <img src="fb-ad-comparison.png" alt="Product comparison ad — 6x longer" />
+            </div>
+            <div class="phone-actions">
+              <span>&#x2764;&#xFE0F; 1.8K</span>
+              <span>&#x1F4AC; 94</span>
+              <span>&#x1F501; 33</span>
+            </div>
+            <div class="phone-caption">Problem-aware comparison. "6x Longer" hook crushed it.</div>
+          </div>
+          <div class="ad-label-tag">Static &middot; Comparison</div>
+        </div>
+
+        <div class="ad-phone">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-header">
+              <div class="phone-avatar">FB</div>
+              <div>
+                <div class="phone-brand">Filterbaby</div>
+                <div class="phone-sponsored">Sponsored</div>
+              </div>
+              <div class="phone-dots">•••</div>
+            </div>
+            <div class="phone-media">
+              <img src="fb-ad-mens-hair.png" alt="Men's hair thinning ad with TIME badge" />
+            </div>
+            <div class="phone-actions">
+              <span>&#x2764;&#xFE0F; 3.1K</span>
+              <span>&#x1F4AC; 241</span>
+              <span>&#x1F501; 89</span>
+            </div>
+            <div class="phone-caption">New audience, new angle. Men's hair thinning — top performer.</div>
+          </div>
+          <div class="ad-label-tag">Static &middot; New Audience</div>
+        </div>
+
+        <div class="ad-phone">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-header">
+              <div class="phone-avatar">FB</div>
+              <div>
+                <div class="phone-brand">Filterbaby</div>
+                <div class="phone-sponsored">Sponsored</div>
+              </div>
+              <div class="phone-dots">•••</div>
+            </div>
+            <div class="phone-media">
+              <img src="fb-ad-bundle.png" alt="Award-winning bundle ad" />
+            </div>
+            <div class="phone-actions">
+              <span>&#x2764;&#xFE0F; 1.2K</span>
+              <span>&#x1F4AC; 78</span>
+              <span>&#x1F501; 41</span>
+            </div>
+            <div class="phone-caption">Award + bundle = instant credibility + higher AOV.</div>
+          </div>
+          <div class="ad-label-tag">Static &middot; Bundle Promo</div>
+        </div>
+
+        <div class="ad-phone">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-header">
+              <div class="phone-avatar">FB</div>
+              <div>
+                <div class="phone-brand">Filterbaby</div>
+                <div class="phone-sponsored">Sponsored</div>
+              </div>
+              <div class="phone-dots">•••</div>
+            </div>
+            <div class="phone-media">
+              <video src="fb-ad-holiday.mp4" playsinline muted loop></video>
+              <div class="play-overlay" onclick="this.parentElement.querySelector('video').play();this.style.display='none';">&#9654;</div>
+            </div>
+            <div class="phone-actions">
+              <span>&#x2764;&#xFE0F; 4.7K</span>
+              <span>&#x1F4AC; 312</span>
+              <span>&#x1F501; 127</span>
+            </div>
+            <div class="phone-caption">BFCM gifting video. Urgency + holiday vibes = conversions.</div>
+          </div>
+          <div class="ad-label-tag">Video &middot; BFCM</div>
+        </div>
+
+        <div class="ad-phone">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-header">
+              <div class="phone-avatar">FB</div>
+              <div>
+                <div class="phone-brand">Filterbaby</div>
+                <div class="phone-sponsored">Sponsored</div>
+              </div>
+              <div class="phone-dots">•••</div>
+            </div>
+            <div class="phone-media">
+              <video src="fb-ad-sarah.mp4" playsinline muted loop></video>
+              <div class="play-overlay" onclick="this.parentElement.querySelector('video').play();this.style.display='none';">&#9654;</div>
+            </div>
+            <div class="phone-actions">
+              <span>&#x2764;&#xFE0F; 5.2K</span>
+              <span>&#x1F4AC; 408</span>
+              <span>&#x1F501; 156</span>
+            </div>
+            <div class="phone-caption">Creator whitelisted UGC. Authentic > polished, every time.</div>
+          </div>
+          <div class="ad-label-tag">Video &middot; UGC</div>
+        </div>
+      </div>
+
+      <!-- Carousel controls -->
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prevBtn" aria-label="Previous" onclick="scrollCarousel(-1)">&#8592;</button>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <button class="carousel-btn" id="nextBtn" aria-label="Next" onclick="scrollCarousel(1)">&#8594;</button>
+      </div>
+      <p style="text-align:center;font-size:0.75rem;color:var(--muted);margin-top:0.75rem;">Swipe or use arrows to browse &middot; Tap videos to play</p>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
   <!-- Key Takeaways -->
   <div class="section">
     <div class="story-section fade-in">
@@ -381,6 +749,38 @@
       entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Carousel logic
+    const carousel = document.getElementById('adCarousel');
+    const phones = carousel.querySelectorAll('.ad-phone');
+    const dotsContainer = document.getElementById('carouselDots');
+
+    // Create dots
+    phones.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.onclick = () => scrollToSlide(i);
+      dotsContainer.appendChild(dot);
+    });
+
+    function scrollCarousel(dir) {
+      const phoneWidth = phones[0].offsetWidth + 24; // width + gap
+      carousel.scrollBy({ left: dir * phoneWidth, behavior: 'smooth' });
+    }
+
+    function scrollToSlide(i) {
+      const phoneWidth = phones[0].offsetWidth + 24;
+      carousel.scrollTo({ left: i * phoneWidth, behavior: 'smooth' });
+    }
+
+    // Update dots on scroll
+    carousel.addEventListener('scroll', () => {
+      const phoneWidth = phones[0].offsetWidth + 24;
+      const index = Math.round(carousel.scrollLeft / phoneWidth);
+      dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    });
   </script>
 
 </body>
