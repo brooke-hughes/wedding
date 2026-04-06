@@ -118,7 +118,7 @@
     document.body.appendChild(iframe);
 
     if (window.location.search.includes('sent=1')) {
-      document.querySelector('.contact-form').innerHTML = '<p style="text-align:center;padding:3rem 0;color:var(--accent);font-weight:600;font-size:1.1rem">Thanks! We\'ll be in touch within 24 hours.</p>';
+      document.querySelector('.contact-form').innerHTML = '<div style="text-align:center;padding:3rem 0;"><p style="color:var(--accent);font-weight:600;font-size:1.1rem;margin-bottom:1rem;">Thanks! We\'ll be in touch within 24 hours.</p><p style="color:var(--muted);font-size:0.95rem;margin-bottom:1.5rem;">Want to skip the wait and book a call now?</p><a href="https://calendly.com/letsbsocial_/30min" target="_blank" rel="noopener" class="btn btn-primary" style="display:inline-block;">Book a Free 30-Min Call</a></div>';
     }
 
     document.getElementById('contactForm').addEventListener('submit', function(e) {
