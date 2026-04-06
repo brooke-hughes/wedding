@@ -218,6 +218,10 @@
       transform: translateY(-3px);
     }
 
+    .process-step:nth-child(even):hover {
+      border-color: var(--rose);
+    }
+
     .process-step .step-num {
       font-family: 'Instrument Serif', serif;
       font-size: 2.2rem;
@@ -240,6 +244,10 @@
       font-size: 0.82rem;
       color: var(--muted);
       line-height: 1.65;
+    }
+
+    .process-step:nth-child(even) .step-num {
+      color: var(--rose);
     }
 
     @media (max-width: 768px) {
@@ -373,6 +381,7 @@
     }
 
     .ind-tag:hover { border-color: var(--pop); background: var(--pop-soft); }
+    .ind-tag:nth-child(even):hover { border-color: var(--rose); background: var(--rose-soft); }
 
     /* ── Founders ── */
     .founders-section {
@@ -419,7 +428,7 @@
       font-family: 'Instrument Serif', serif;
       font-style: italic;
       font-size: 1.15rem;
-      color: var(--pop);
+      color: var(--rose);
       margin-top: 1rem;
     }
 
@@ -431,6 +440,7 @@
     /* ── Testimonial ── */
     .testimonial-section {
       padding: 8rem 2rem;
+      background: linear-gradient(135deg, rgba(217, 79, 138, 0.05) 0%, rgba(244, 240, 234, 0) 60%);
     }
 
     .testimonial-inner {
@@ -578,6 +588,7 @@
     .freebie-inner {
       background: var(--surface);
       border: 1px solid var(--border);
+      border-left: 3px solid var(--rose);
       border-radius: var(--radius);
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -657,7 +668,7 @@
     .freebie-form input::placeholder { color: #b0a89d; }
 
     .freebie-visual {
-      background: var(--pop);
+      background: var(--rose);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -739,7 +750,7 @@
       </p>
       <div class="btn-row fade-in">
         <a class="btn btn-primary" href="contact.html">Let's Talk</a>
-        <a class="btn" href="case-studies.html">See Our Work</a>
+        <a class="btn btn-secondary" href="case-studies.html">See Our Work</a>
       </div>
     </div>
     <div class="hero-visual fade-in">

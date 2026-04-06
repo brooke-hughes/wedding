@@ -217,10 +217,31 @@ em {
 
 .btn-gold:hover { opacity: 0.85; }
 
+.btn-secondary {
+  background: transparent;
+  border: 1.5px solid var(--rose);
+  color: var(--rose);
+}
+
+.btn-secondary:hover {
+  background: var(--rose);
+  color: #fff;
+  border-color: var(--rose);
+}
+
 .btn-row { display: flex; gap: 1rem; flex-wrap: wrap; }
 
 /* ── Divider ── */
 .divider { border: none; border-top: 1px solid var(--border); margin: 0 2rem; max-width: var(--max); margin-left: auto; margin-right: auto; }
+
+/* ── Color accent utilities ── */
+.accent-bg-rose {
+  background: linear-gradient(135deg, rgba(217, 79, 138, 0.06) 0%, rgba(217, 79, 138, 0.02) 100%);
+}
+
+.accent-bg-green {
+  background: linear-gradient(135deg, rgba(93, 166, 68, 0.06) 0%, rgba(93, 166, 68, 0.02) 100%);
+}
 
 /* ── Cards ── */
 .card {
