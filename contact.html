@@ -96,6 +96,27 @@
     // REPLACE THIS URL after deploying your Google Apps Script
     var GOOGLE_SCRIPT_URL = 'https://script.google.com/a/macros/letsbsocial.co/s/AKfycbwkPzkmzt-mgskbDckUWI3dmgJTInsI_d00XiPG34pbGYFBs1x8mpuhW4Z8dPKZlNXP/exec';
 
+    /* ── Send to Google Sheets via hidden iframe form ── */
+    function sendToSheet(data) {
+      var form = document.createElement('form');
+      form.method = 'POST';
+      form.action = GOOGLE_SCRIPT_URL;
+      form.target = 'hidden_iframe';
+      var input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = 'payload';
+      input.value = JSON.stringify(data);
+      form.appendChild(input);
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
+    }
+
+    var iframe = document.createElement('iframe');
+    iframe.name = 'hidden_iframe';
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+
     if (window.location.search.includes('sent=1')) {
       document.querySelector('.contact-form').innerHTML = '<p style="text-align:center;padding:3rem 0;color:var(--accent);font-weight:600;font-size:1.1rem">Thanks! We\'ll be in touch within 24 hours.</p>';
     }
@@ -116,12 +137,7 @@
       };
 
       // Send to Google Sheets
-      fetch(GOOGLE_SCRIPT_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'text/plain' },
-        body: JSON.stringify(data),
-        mode: 'no-cors'
-      });
+      sendToSheet(data);
 
       // Also send to Formspree for email backup
       fetch('https://formspree.io/f/mdappwoy', {
@@ -139,7 +155,7 @@
       // Redirect after short delay
       setTimeout(function() {
         window.location.href = 'contact.html?sent=1';
-      }, 800);
+      }, 1000);
     });
 
     const observer = new IntersectionObserver((entries) => {

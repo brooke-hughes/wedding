@@ -986,6 +986,28 @@
     // REPLACE THIS URL after deploying your Google Apps Script
     var GOOGLE_SCRIPT_URL = 'https://script.google.com/a/macros/letsbsocial.co/s/AKfycbwkPzkmzt-mgskbDckUWI3dmgJTInsI_d00XiPG34pbGYFBs1x8mpuhW4Z8dPKZlNXP/exec';
 
+    /* ── Send to Google Sheets via hidden iframe form ── */
+    function sendToSheet(data) {
+      var form = document.createElement('form');
+      form.method = 'POST';
+      form.action = GOOGLE_SCRIPT_URL;
+      form.target = 'hidden_iframe';
+      var input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = 'payload';
+      input.value = JSON.stringify(data);
+      form.appendChild(input);
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
+    }
+
+    // Hidden iframe for form submission
+    var iframe = document.createElement('iframe');
+    iframe.name = 'hidden_iframe';
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+
     /* ── Checklist form submission ── */
     document.getElementById('checklistForm').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -997,12 +1019,7 @@
       var email = form.email.value;
 
       // Send to Google Sheets
-      fetch(GOOGLE_SCRIPT_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'text/plain' },
-        body: JSON.stringify({ email: email, source: 'checklist' }),
-        mode: 'no-cors'
-      });
+      sendToSheet({ email: email, source: 'checklist' });
 
       // Also send to Formspree
       fetch('https://formspree.io/f/mdappwoy', {
@@ -1014,7 +1031,7 @@
       // Redirect to thank you page
       setTimeout(function() {
         window.location.href = 'checklist-thanks.html';
-      }, 800);
+      }, 1000);
     });
 
     /* ── Fade-in on scroll ── */

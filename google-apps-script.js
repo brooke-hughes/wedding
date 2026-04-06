@@ -1,39 +1,60 @@
 // ============================================
 // PASTE THIS INTO GOOGLE APPS SCRIPT EDITOR
-// (Extensions → Apps Script in your Google Sheet)
-// Then: Deploy → New Deployment → Web App
-//   Execute as: Me
-//   Who has access: Anyone
+// Then: Deploy → Manage Deployments → Edit (pencil) → Version: New version → Deploy
 // ============================================
 
 function doPost(e) {
+  var ss = SpreadsheetApp.openById('1NHCKx6_Kh8asruszdTcN-ZwmO10XfWtZim4kxMzW-Bk');
+  var sheet = ss.getSheets()[0];
+
+  // Parse data - handle both form POST and JSON POST
+  var data = {};
   try {
-    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-    var data = JSON.parse(e.postData.contents);
-
-    sheet.appendRow([
-      new Date(),                          // Timestamp
-      data.name || '',                     // Name
-      data.email || '',                    // Email
-      data.company || '',                  // Company
-      data.message || '',                  // Message
-      data.source || 'Unknown'             // Source (checklist or contact)
-    ]);
-
-    return ContentService
-      .createTextOutput(JSON.stringify({ result: 'success' }))
-      .setMimeType(ContentService.MimeType.JSON);
-
-  } catch (err) {
-    return ContentService
-      .createTextOutput(JSON.stringify({ result: 'error', error: err.toString() }))
-      .setMimeType(ContentService.MimeType.JSON);
+    if (e.parameter && e.parameter.payload) {
+      data = JSON.parse(e.parameter.payload);
+    } else if (e.postData && e.postData.contents) {
+      data = JSON.parse(e.postData.contents);
+    }
+  } catch(err) {
+    data = { email: 'parse error', source: err.toString() };
   }
+
+  // Write to sheet
+  sheet.appendRow([
+    new Date(),
+    data.name || '',
+    data.email || '',
+    data.company || '',
+    data.message || '',
+    data.source || 'Unknown'
+  ]);
+  SpreadsheetApp.flush();
+
+  // Email notifications
+  try {
+    if (data.source === 'contact') {
+      MailApp.sendEmail(
+        'brooke@letsbsocial.co',
+        '🚀 New Lead — ' + (data.name || 'Unknown'),
+        'Name: ' + (data.name || '') + '\nEmail: ' + (data.email || '') + '\nCompany: ' + (data.company || '') + '\nMessage: ' + (data.message || '')
+      );
+    }
+    if (data.source === 'checklist') {
+      MailApp.sendEmail(
+        'brooke@letsbsocial.co',
+        '📋 New Checklist Download — ' + (data.email || 'Unknown'),
+        'Email: ' + (data.email || '')
+      );
+    }
+  } catch(err) {}
+
+  return ContentService.createTextOutput('ok');
 }
 
-// This handles GET requests too (useful for testing)
 function doGet(e) {
-  return ContentService
-    .createTextOutput('B Social Leads script is running!')
-    .setMimeType(ContentService.MimeType.TEXT);
+  var ss = SpreadsheetApp.openById('1NHCKx6_Kh8asruszdTcN-ZwmO10XfWtZim4kxMzW-Bk');
+  var sheet = ss.getSheets()[0];
+  sheet.appendRow([new Date(), 'TEST', 'test@test.com', '', '', 'test']);
+  SpreadsheetApp.flush();
+  return ContentService.createTextOutput('Test row added! Check your sheet.');
 }
