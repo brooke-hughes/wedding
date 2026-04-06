@@ -247,17 +247,10 @@
     }
 
     .process-step .doodle-icon {
-      position: absolute;
-      top: -14px;
-      right: 1.5rem;
-      font-size: 1.6rem;
-      background: var(--bg);
-      padding: 0 0.4rem;
-      transition: transform 0.3s;
-    }
-
-    .process-step:hover .doodle-icon {
-      transform: rotate(-10deg) scale(1.2);
+      display: block;
+      width: 64px;
+      height: 64px;
+      margin-bottom: 1rem;
     }
 
     /* ── Hand-drawn doodles ── */
@@ -858,21 +851,86 @@
     <h2 class="fade-in">The B Social Method</h2>
     <div class="process-grid fade-in">
       <div class="process-step">
+        <svg class="doodle-icon" viewBox="0 0 80 80" fill="none">
+          <!-- binoculars - wobbly hand-drawn -->
+          <ellipse cx="28" cy="42" rx="14" ry="15" stroke="var(--pop)" stroke-width="2" stroke-dasharray="0" style="filter:url(#sketchy)"/>
+          <ellipse cx="54" cy="42" rx="14" ry="15" stroke="var(--pop)" stroke-width="2"/>
+          <path d="M38 36 Q41 32 44 36" stroke="var(--pop)" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M20 28 Q18 18 22 14" stroke="var(--pop)" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M62 28 Q64 18 60 14" stroke="var(--pop)" stroke-width="1.5" stroke-linecap="round"/>
+          <ellipse cx="28" cy="42" rx="6" ry="6" fill="var(--pop)" opacity="0.08"/>
+          <ellipse cx="54" cy="42" rx="6" ry="6" fill="var(--pop)" opacity="0.08"/>
+          <path d="M24 60 Q26 64 30 62" stroke="var(--pop)" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+          <path d="M50 60 Q52 64 56 62" stroke="var(--pop)" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+          <!-- sparkle -->
+          <path d="M68 12 L68 20 M64 16 L72 16" stroke="var(--rose)" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        </svg>
         <div class="step-num">01</div>
         <h3>Stalk (Nicely)</h3>
         <p>We deep-dive into your brand, your competitors, and your audience. Think of it as strategic snooping &mdash; we find what's working, what's not, and what everyone else is missing.</p>
       </div>
       <div class="process-step">
+        <svg class="doodle-icon" viewBox="0 0 80 80" fill="none">
+          <!-- map / treasure map with X -->
+          <path d="M12 14 Q14 10 20 12 L60 12 Q66 10 68 14 L72 62 Q70 68 64 66 L18 66 Q12 68 10 62 Z" stroke="var(--rose)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 14 L72 62" stroke="var(--rose)" stroke-width="0.5" opacity="0.15" stroke-dasharray="4 4"/>
+          <path d="M10 62 L68 14" stroke="var(--rose)" stroke-width="0.5" opacity="0.15" stroke-dasharray="4 4"/>
+          <!-- dotted path -->
+          <path d="M22 52 Q28 44 36 48 Q44 52 48 40 Q52 30 56 26" stroke="var(--rose)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 4"/>
+          <!-- X marks the spot -->
+          <path d="M52 22 L60 30 M60 22 L52 30" stroke="var(--rose)" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="56" cy="26" r="8" stroke="var(--rose)" stroke-width="1" opacity="0.2" stroke-dasharray="3 3"/>
+          <!-- little flag at start -->
+          <path d="M22 56 L22 48" stroke="var(--rose)" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M22 48 L30 50 L22 52" fill="var(--rose)" opacity="0.15" stroke="var(--rose)" stroke-width="1"/>
+        </svg>
         <div class="step-num">02</div>
         <h3>Game Plan</h3>
         <p>No recycled playbooks here. We build a custom strategy around your goals, your budget, and your people &mdash; not some other brand's leftovers.</p>
       </div>
       <div class="process-step">
+        <svg class="doodle-icon" viewBox="0 0 80 80" fill="none">
+          <!-- rocket - hand drawn wobbly -->
+          <path d="M40 10 Q36 20 34 32 L32 44 Q36 50 40 52 Q44 50 48 44 L46 32 Q44 20 40 10 Z" stroke="var(--pop)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M40 10 Q36 20 34 32 L32 44 Q36 50 40 52 Q44 50 48 44 L46 32 Q44 20 40 10 Z" fill="var(--pop)" opacity="0.06"/>
+          <!-- fins -->
+          <path d="M32 40 Q24 44 22 50 L32 46" stroke="var(--pop)" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M48 40 Q56 44 58 50 L48 46" stroke="var(--pop)" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- window -->
+          <circle cx="40" cy="28" r="4" stroke="var(--pop)" stroke-width="1.5"/>
+          <circle cx="40" cy="28" r="1.5" fill="var(--pop)" opacity="0.15"/>
+          <!-- fire/exhaust -->
+          <path d="M36 52 Q34 60 37 66 Q40 70 40 62 Q40 70 43 66 Q46 60 44 52" stroke="var(--rose)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+          <path d="M38 54 Q40 62 42 54" stroke="var(--rose)" stroke-width="1" opacity="0.3"/>
+          <!-- stars -->
+          <path d="M16 18 L16 24 M13 21 L19 21" stroke="var(--pop)" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+          <circle cx="64" cy="14" r="1.5" fill="var(--pop)" opacity="0.2"/>
+          <circle cx="20" cy="40" r="1" fill="var(--pop)" opacity="0.2"/>
+        </svg>
         <div class="step-num">03</div>
         <h3>Go Live</h3>
         <p>We launch fast and watch the data like hawks. You'll always know exactly what's running, what it's costing, and why we're doing it.</p>
       </div>
       <div class="process-step">
+        <svg class="doodle-icon" viewBox="0 0 80 80" fill="none">
+          <!-- brain with gears -->
+          <path d="M26 50 Q14 46 14 34 Q14 22 24 18 Q28 12 36 12 Q42 10 48 14 Q56 16 60 24 Q66 30 64 40 Q64 48 56 52 Q50 56 44 54 Q38 58 30 54 Z" stroke="var(--rose)" stroke-width="2" stroke-linecap="round"/>
+          <path d="M26 50 Q14 46 14 34 Q14 22 24 18 Q28 12 36 12 Q42 10 48 14 Q56 16 60 24 Q66 30 64 40 Q64 48 56 52 Q50 56 44 54 Q38 58 30 54 Z" fill="var(--rose)" opacity="0.05"/>
+          <!-- brain squiggle -->
+          <path d="M28 22 Q34 18 40 24 Q46 30 38 34 Q30 38 36 42 Q42 46 50 44" stroke="var(--rose)" stroke-width="1.2" stroke-linecap="round" opacity="0.3"/>
+          <!-- lightbulb rays -->
+          <path d="M40 4 L40 8" stroke="var(--rose)" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+          <path d="M56 8 L52 12" stroke="var(--rose)" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+          <path d="M24 8 L28 12" stroke="var(--rose)" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+          <path d="M66 22 L70 20" stroke="var(--rose)" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+          <path d="M10 24 L6 22" stroke="var(--rose)" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+          <!-- exclamation / idea -->
+          <circle cx="66" cy="10" r="3" stroke="var(--pop)" stroke-width="1.5" opacity="0.5"/>
+          <path d="M66 6 L66 2" stroke="var(--pop)" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+          <!-- arrow going up -->
+          <path d="M50 66 Q54 62 58 56" stroke="var(--rose)" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+          <path d="M56 54 L60 56 L56 60" stroke="var(--rose)" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+        </svg>
         <div class="step-num">04</div>
         <h3>Obsess &amp; Improve</h3>
         <p>We don't "set it and forget it" &mdash; we test, tweak, and optimize every single week. Your ads should get better with age, like fine wine (or us).</p>
@@ -881,8 +939,10 @@
   </div>
 
   <div class="doodle-section-break">
-    <svg class="doodle" width="120" height="20" viewBox="0 0 120 20" fill="none" stroke="var(--rose)" stroke-width="1.2" stroke-linecap="round">
-      <path d="M10 10 Q25 2 40 10 Q55 18 70 10 Q85 2 100 10 Q107 14 110 10"/>
+    <svg class="doodle" width="180" height="30" viewBox="0 0 180 30" fill="none" stroke="var(--rose)" stroke-width="1.8" stroke-linecap="round">
+      <path d="M20 15 Q35 4 50 15 Q65 26 80 15 Q95 4 110 15 Q125 26 140 15 Q155 4 165 15"/>
+      <circle cx="10" cy="15" r="3" fill="var(--rose)" opacity="0.2"/>
+      <circle cx="172" cy="15" r="3" fill="var(--pop)" opacity="0.2"/>
     </svg>
   </div>
 
@@ -970,9 +1030,13 @@
   </div>
 
   <div class="doodle-section-break">
-    <svg class="doodle" width="60" height="30" viewBox="0 0 60 30" fill="none" stroke="var(--pop)" stroke-width="1" stroke-linecap="round">
-      <path d="M20 5 L22 3 L24 5 M28 3 L30 5 L32 3 M36 5 L38 3 L40 5" opacity="0.6"/>
-      <path d="M15 15 Q22 10 30 15 Q38 20 45 15" stroke-dasharray="2 2"/>
+    <svg class="doodle" width="100" height="40" viewBox="0 0 100 40" fill="none" stroke-linecap="round">
+      <!-- hand-drawn arrow pointing down -->
+      <path d="M50 6 Q48 16 50 30" stroke="var(--pop)" stroke-width="1.8"/>
+      <path d="M42 24 L50 34 L58 24" stroke="var(--pop)" stroke-width="1.8"/>
+      <!-- little stars -->
+      <path d="M22 12 L24 8 L26 12 L22 10 L26 10" stroke="var(--rose)" stroke-width="1" opacity="0.4"/>
+      <path d="M74 16 L76 12 L78 16 L74 14 L78 14" stroke="var(--pop)" stroke-width="1" opacity="0.4"/>
     </svg>
   </div>
 
