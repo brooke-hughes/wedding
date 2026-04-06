@@ -19,6 +19,86 @@
 
     .page-hero h1 { margin-bottom: 1rem; }
     .page-hero p { color: var(--muted); max-width: 560px; font-size: 1.1rem; }
+
+    /* ── FAQ ── */
+    .faq-section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .faq-section h2 {
+      margin-bottom: 2.5rem;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+
+    .faq-item:hover {
+      border-color: var(--pop);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.25rem 1.5rem;
+      font-family: 'Archivo', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 1.2rem;
+      color: var(--rose);
+      font-weight: 400;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+
+    .faq-item.open .faq-question::after {
+      content: '−';
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+
+    .faq-answer p {
+      padding: 0 1.5rem 1.25rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .faq-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -82,6 +162,47 @@
       <div style="text-align:center;margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border);">
         <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1rem;">Prefer to skip the form and just chat?</p>
         <a class="btn btn-secondary" href="https://calendly.com/letsbsocial_/30min" target="_blank" rel="noopener" style="display:inline-block;">Book a Free 30-Min Call</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <hr class="divider" />
+  <div class="faq-section">
+    <p class="section-label fade-in">Common Questions</p>
+    <h2 class="fade-in">Before you reach out, <em>here's what most people ask</em></h2>
+    <div class="faq-grid fade-in">
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">What's the minimum ad budget you work with?</button>
+        <div class="faq-answer"><p>We typically recommend a minimum of $1,500–$2,000/month in ad spend to see meaningful results. That said, we'll be honest with you on the call if your budget isn't a fit yet — and we'll tell you what to do in the meantime.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">How fast will I see results?</button>
+        <div class="faq-answer"><p>Most clients start seeing leads within the first 2 weeks. But real, optimized performance — where we've tested creatives, dialed in audiences, and lowered your cost per lead — usually takes 60–90 days. We'll set realistic expectations upfront.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Do I own my ad account?</button>
+        <div class="faq-answer"><p>Yes, 100%. Your ad account, your data, your creative — it's all yours. We never hold accounts hostage. If we ever part ways, you keep everything.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">What makes you different from other agencies?</button>
+        <div class="faq-answer"><p>We're a small, sister-run team — not a big agency that'll hand you off to a junior account manager. You'll work directly with us, get real answers (not jargon), and actually know who's in your ad account every day.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Do you require long-term contracts?</button>
+        <div class="faq-answer"><p>No long-term contracts. We work on a month-to-month basis because we believe our work should speak for itself. Most clients stay because they see results — not because they're locked in.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">What platforms do you run ads on?</button>
+        <div class="faq-answer"><p>Our core focus is Google Ads and Meta (Facebook + Instagram). We also run campaigns on Pinterest, TikTok, Snapchat, and Reddit depending on where your audience lives. We'll recommend the right mix for your brand.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">What does the onboarding process look like?</button>
+        <div class="faq-answer"><p>After our strategy call, we'll send over a simple questionnaire and get access to your accounts. From there, we audit what's been running, build a custom strategy, and launch within 1–2 weeks. You'll never be left wondering what's happening.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Can I see reporting on my campaigns?</button>
+        <div class="faq-answer"><p>Absolutely. You'll get regular performance reports plus a live dashboard so you can check in anytime. We also hop on calls to walk you through the numbers — no confusing spreadsheets, just clear insights.</p></div>
       </div>
     </div>
   </div>
