@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketing for Med Spas — B Social Digital Marketing</title>
+  <meta name="description" content="Digital marketing for med spas and aesthetic clinics. Google Ads, Meta Ads, and SEO to help you get more Botox, filler, and laser treatment bookings from clients searching near you." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .page-hero {
+      padding: 8rem 2rem 5rem;
+      max-width: var(--max);
+      margin: 0 auto;
+      margin-top: 64px;
+      text-align: center;
+    }
+
+    .page-hero h1 { margin-bottom: 1rem; }
+
+    .page-hero p {
+      color: var(--muted);
+      max-width: 580px;
+      font-size: 1.1rem;
+      margin: 0 auto 2.5rem;
+    }
+
+    /* Problem section */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .problem-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .problem-card .icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .problem-card h3 {
+      font-family: 'Archivo', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .problem-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Solution cards */
+    .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .solution-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: border-color 0.3s;
+    }
+
+    .solution-card:hover { border-color: var(--accent); }
+
+    .solution-card .number {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: var(--accent2);
+      margin-bottom: 0.75rem;
+    }
+
+    .solution-card h3 {
+      font-family: 'Archivo', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .solution-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Urgency callout */
+    .urgency-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 3.5rem 2rem;
+      text-align: center;
+    }
+
+    .urgency-banner h2 { margin-bottom: 1rem; }
+    .urgency-banner p { color: var(--muted); max-width: 560px; margin: 0 auto 2rem; line-height: 1.8; }
+
+    /* Who it's for */
+    .for-list {
+      list-style: none;
+      max-width: 600px;
+      margin: 2rem auto 0;
+    }
+
+    .for-list li {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .for-list li::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* CTA */
+    .cta-banner {
+      background: var(--pop);
+      border: none;
+      border-radius: var(--radius);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .cta-banner .section-label { color: rgba(255,255,255,0.7); }
+    .cta-banner h2 { color: #fff; margin-bottom: 1rem; }
+    .cta-banner h2 em { color: rgba(255,255,255,0.85); }
+    .cta-banner p { color: rgba(255,255,255,0.8); max-width: 480px; margin: 0 auto 2rem; }
+
+    .cta-banner .btn {
+      background: #fff;
+      color: var(--pop);
+      border-color: #fff;
+    }
+
+    .cta-banner .btn:hover { opacity: 0.9; }
+
+    @media (max-width: 768px) {
+      .problem-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo"><img src="../logo.png" alt="bsocial." /></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="../services.html">Services</a>
+      <a href="../about.html">Our Story</a>
+      <a href="../case-studies.html">Case Studies</a>
+      <a href="../bridal.html">Bridal &amp; Events</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../contact.html" class="nav-cta">Work With Us</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="page-hero">
+    <p class="section-label fade-in">For Med Spas &amp; Aesthetic Clinics</p>
+    <h1 class="fade-in">Your treatments sell themselves.<br />Your <em>marketing</em> should too.</h1>
+    <p class="fade-in">
+      Digital marketing built specifically for med spas, aesthetic clinics, and wellness practices. We help you show up when potential clients are searching for Botox, fillers, laser treatments, and more &mdash; right when they're ready to book.
+    </p>
+    <div class="btn-row fade-in" style="justify-content: center;">
+      <a class="btn btn-primary" href="../contact.html">Book a Free Strategy Call</a>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- The Problem -->
+  <div class="section">
+    <p class="section-label fade-in">The Problem</p>
+    <h2 class="fade-in">Great results in the treatment room, <em>invisible</em> online</h2>
+    <p class="section-intro fade-in">You deliver transformative results every day. But if the right clients can't find you, those empty appointment slots keep adding up.</p>
+    <div class="problem-grid">
+      <div class="problem-card fade-in">
+        <h3>Competing with corporate chains</h3>
+        <p>National franchises and med spa chains are outspending you on ads, dominating search results, and taking clients who would prefer your personalized care.</p>
+      </div>
+      <div class="problem-card fade-in">
+        <h3>Relying on word of mouth alone</h3>
+        <p>Referrals are great, but they're unpredictable. Without a consistent digital presence, your growth is capped by who happens to mention you.</p>
+      </div>
+      <div class="problem-card fade-in">
+        <h3>Wasting money on bad ads</h3>
+        <p>You've tried boosting posts or running ads without a real strategy. The result? Clicks from people who never book and budgets that disappear fast.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Urgency -->
+  <div class="section">
+    <div class="urgency-banner fade-in">
+      <p class="section-label">Why This Matters</p>
+      <h2>Your ideal clients are searching <em>right now</em>.</h2>
+      <p>
+        "Botox near me" gets thousands of searches every single month. So does "lip filler near me," "laser hair removal near me," and dozens of other treatments you offer. These aren't casual browsers &mdash; they're high-intent clients with a credit card ready, looking for a provider to book with today. If your practice isn't showing up, they're booking with someone else.
+      </p>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- How We Help -->
+  <div class="section">
+    <p class="section-label fade-in">How We Help</p>
+    <h2 class="fade-in">We put your practice in front of clients <em>ready to book</em></h2>
+    <div class="solution-grid">
+      <div class="solution-card fade-in">
+        <div class="number">01</div>
+        <h3>Google Ads</h3>
+        <p>Show up at the top of search results when someone searches "Botox near me" or "med spa in [your city]." High-intent campaigns built around your specific treatments and service area.</p>
+      </div>
+      <div class="solution-card fade-in">
+        <div class="number">02</div>
+        <h3>Meta Ads</h3>
+        <p>Reach potential clients on Instagram and Facebook with scroll-stopping before-and-after content, retargeting campaigns, and treatment promotions that drive real bookings.</p>
+      </div>
+      <div class="solution-card fade-in">
+        <div class="number">03</div>
+        <h3>SEO</h3>
+        <p>Build long-term organic visibility so your practice ranks when clients search for treatments in your area. The foundation for sustainable, compounding growth.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Who it's for -->
+  <div class="section" style="text-align: center;">
+    <p class="section-label fade-in">Who This Is For</p>
+    <h2 class="fade-in">Built for practices in the <em>aesthetics space</em></h2>
+    <ul class="for-list fade-in">
+      <li>Med spas and medical aesthetics practices</li>
+      <li>Dermatology practices</li>
+      <li>Plastic surgery offices</li>
+      <li>Aesthetic clinics and skin care centers</li>
+      <li>Wellness centers</li>
+      <li>IV therapy clinics</li>
+    </ul>
+  </div>
+
+  <!-- CTA -->
+  <div class="section">
+    <div class="cta-banner fade-in">
+      <p class="section-label">Let's Fill Your Schedule</p>
+      <h2>Ready to stop losing clients to <em>the competition</em>?</h2>
+      <p>Book a free strategy call and we'll map out exactly how to get your practice in front of high-intent clients who are ready to book.</p>
+      <a class="btn" href="../contact.html">Book a Free Strategy Call</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 <span>B Social</span> Digital Marketing &middot; All rights reserved.</p>
+    <p style="margin-top:0.75rem;"><a href="https://www.instagram.com/bsocial_digitalmarketing/" target="_blank" rel="noopener" style="color:var(--pop);font-weight:500;">@bsocial_digitalmarketing</a> &nbsp;&middot;&nbsp; <a href="https://www.tiktok.com/@brooketheadsgirl" target="_blank" rel="noopener" style="color:var(--pop);font-weight:500;">@brooketheadsgirl</a></p>
+    <p style="margin-top:0.5rem;font-size:0.7rem;color:var(--muted);">built on matcha &amp; ambition &#x1F375;</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

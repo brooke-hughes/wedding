@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketing for Cosmetic Dentistry — B Social Digital Marketing</title>
+  <meta name="description" content="Digital marketing for cosmetic dentistry practices. Google Ads, Meta Ads, and SEO to help cosmetic dentists attract high-value patients searching for veneers, Invisalign, implants, and smile makeovers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .page-hero {
+      padding: 8rem 2rem 5rem;
+      max-width: var(--max);
+      margin: 0 auto;
+      margin-top: 64px;
+      text-align: center;
+    }
+
+    .page-hero h1 { margin-bottom: 1rem; }
+
+    .page-hero p {
+      color: var(--muted);
+      max-width: 580px;
+      font-size: 1.1rem;
+      margin: 0 auto 2.5rem;
+    }
+
+    /* Problem section */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .problem-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .problem-card .icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .problem-card h3 {
+      font-family: 'Archivo', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .problem-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Solution cards */
+    .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .solution-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: border-color 0.3s;
+    }
+
+    .solution-card:hover { border-color: var(--accent); }
+
+    .solution-card .number {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: var(--accent2);
+      margin-bottom: 0.75rem;
+    }
+
+    .solution-card h3 {
+      font-family: 'Archivo', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .solution-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Urgency callout */
+    .urgency-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 3.5rem 2rem;
+      text-align: center;
+    }
+
+    .urgency-banner h2 { margin-bottom: 1rem; }
+    .urgency-banner p { color: var(--muted); max-width: 560px; margin: 0 auto 2rem; line-height: 1.8; }
+
+    /* Who it's for */
+    .for-list {
+      list-style: none;
+      max-width: 600px;
+      margin: 2rem auto 0;
+    }
+
+    .for-list li {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .for-list li::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* CTA */
+    .cta-banner {
+      background: var(--pop);
+      border: none;
+      border-radius: var(--radius);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .cta-banner .section-label { color: rgba(255,255,255,0.7); }
+    .cta-banner h2 { color: #fff; margin-bottom: 1rem; }
+    .cta-banner h2 em { color: rgba(255,255,255,0.85); }
+    .cta-banner p { color: rgba(255,255,255,0.8); max-width: 480px; margin: 0 auto 2rem; }
+
+    .cta-banner .btn {
+      background: #fff;
+      color: var(--pop);
+      border-color: #fff;
+    }
+
+    .cta-banner .btn:hover { opacity: 0.9; }
+
+    @media (max-width: 768px) {
+      .problem-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo"><img src="../logo.png" alt="bsocial." /></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="../services.html">Services</a>
+      <a href="../about.html">Our Story</a>
+      <a href="../case-studies.html">Case Studies</a>
+      <a href="../bridal.html">Bridal &amp; Events</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../contact.html" class="nav-cta">Work With Us</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="page-hero">
+    <p class="section-label fade-in">For Cosmetic Dentistry Practices</p>
+    <h1 class="fade-in">Your patients are Googling.<br />Are they finding <em>you</em> &mdash; or your competitor<br />down the street?</h1>
+    <p class="fade-in">
+      Digital marketing built specifically for cosmetic dentists and dental practices. We help you attract high-value patients searching for veneers, Invisalign, whitening, and smile makeovers &mdash; right when they're ready to book a consultation.
+    </p>
+    <div class="btn-row fade-in" style="justify-content: center;">
+      <a class="btn btn-primary" href="../contact.html">Book a Free Strategy Call</a>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- The Problem -->
+  <div class="section">
+    <p class="section-label fade-in">The Problem</p>
+    <h2 class="fade-in">Great dentistry that patients <em>never discover</em></h2>
+    <p class="section-intro fade-in">Cosmetic dental practices do life-changing work. But if patients can't find you online, they'll book with whoever shows up first.</p>
+    <div class="problem-grid">
+      <div class="problem-card fade-in">
+        <h3>Competing with corporate chains</h3>
+        <p>Large dental chains dominate search results with massive ad budgets and dozens of locations &mdash; pushing independent practices to the bottom of the page.</p>
+      </div>
+      <div class="problem-card fade-in">
+        <h3>Patients compare before they call</h3>
+        <p>Today's cosmetic dental patients read reviews, browse before-and-after photos, and compare multiple practices online before ever picking up the phone.</p>
+      </div>
+      <div class="problem-card fade-in">
+        <h3>Stuck in the insurance model</h3>
+        <p>Relying on insurance-based patients means lower margins and less cosmetic work. The high-value cash-pay patients are out there &mdash; but they're finding your competitors first.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Urgency -->
+  <div class="section">
+    <div class="urgency-banner fade-in">
+      <p class="section-label">Why This Matters</p>
+      <h2>Cosmetic patients have the budget.<br />You need to be <em>the one they find</em>.</h2>
+      <p>
+        Cosmetic dental patients are high-intent searchers spending $5K&ndash;$50K+ on smile transformations &mdash; veneers, full-mouth restorations, Invisalign, implants. They're actively Googling, reading reviews, and choosing a provider right now. If your practice isn't showing up when they search "veneers near me" or "best cosmetic dentist," they'll book a consultation with your competitor instead. These aren't price shoppers. They're ready to invest.
+      </p>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- How We Help -->
+  <div class="section">
+    <p class="section-label fade-in">How We Help</p>
+    <h2 class="fade-in">We put your practice in front of patients <em>ready to book</em></h2>
+    <div class="solution-grid">
+      <div class="solution-card fade-in">
+        <div class="number">01</div>
+        <h3>Google Ads</h3>
+        <p>Capture high-intent searches like "veneers near me," "Invisalign dentist," and "cosmetic dentist [city]." We build campaigns around the exact procedures that drive your highest-value cases.</p>
+      </div>
+      <div class="solution-card fade-in">
+        <div class="number">02</div>
+        <h3>Meta Ads</h3>
+        <p>Showcase stunning before-and-after transformations and patient testimonials on Instagram and Facebook. Visual proof that stops the scroll and drives consultation bookings.</p>
+      </div>
+      <div class="solution-card fade-in">
+        <div class="number">03</div>
+        <h3>SEO</h3>
+        <p>Dominate local search results so your practice ranks when patients search in your area. Build long-term organic visibility that keeps your schedule full month after month.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Who it's for -->
+  <div class="section" style="text-align: center;">
+    <p class="section-label fade-in">Who This Is For</p>
+    <h2 class="fade-in">Built for practices that want <em>more cosmetic cases</em></h2>
+    <ul class="for-list fade-in">
+      <li>Cosmetic dentists and aesthetic dental practices</li>
+      <li>General dentists offering cosmetic services</li>
+      <li>Orthodontists and Invisalign providers</li>
+      <li>Oral surgeons and maxillofacial practices</li>
+      <li>Dental implant specialists</li>
+      <li>Teeth whitening clinics</li>
+    </ul>
+  </div>
+
+  <!-- CTA -->
+  <div class="section">
+    <div class="cta-banner fade-in">
+      <p class="section-label">Let's Fill Your Schedule</p>
+      <h2>Ready to attract more <em>high-value patients</em>?</h2>
+      <p>Book a free strategy call and we'll map out exactly how to get your practice in front of cosmetic patients who are ready to invest in their smile.</p>
+      <a class="btn" href="../contact.html">Book a Free Strategy Call</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 <span>B Social</span> Digital Marketing &middot; All rights reserved.</p>
+    <p style="margin-top:0.75rem;"><a href="https://www.instagram.com/bsocial_digitalmarketing/" target="_blank" rel="noopener" style="color:var(--pop);font-weight:500;">@bsocial_digitalmarketing</a> &nbsp;&middot;&nbsp; <a href="https://www.tiktok.com/@brooketheadsgirl" target="_blank" rel="noopener" style="color:var(--pop);font-weight:500;">@brooketheadsgirl</a></p>
+    <p style="margin-top:0.5rem;font-size:0.7rem;color:var(--muted);">built on matcha &amp; ambition &#x1F375;</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
