@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B+D Wedding Invitation Suite Mockup</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Pinyon+Script&family=Montserrat:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #e8e4df;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .suite-container {
+    position: relative;
+    width: 1300px;
+    height: 1000px;
+  }
+
+  /* ---- PINK STRING/ROPE ---- */
+  .pink-string-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* ---- CARD BASE STYLES ---- */
+  .card {
+    position: absolute;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.08);
+  }
+
+  /* ---- CARD 1: IVORY INVITATION ---- */
+  .card-ivory {
+    width: 420px;
+    height: 580px;
+    background: #f5f0e8;
+    top: 80px;
+    left: 30px;
+    transform: rotate(-2deg);
+    z-index: 5;
+    padding: 50px 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .monogram {
+    font-family: 'Dancing Script', cursive;
+    font-size: 56px;
+    font-weight: 700;
+    color: #6b2737;
+    margin-bottom: 30px;
+    letter-spacing: 4px;
+  }
+
+  .card-ivory .families {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #4a4a4a;
+    margin-bottom: 28px;
+    font-weight: 500;
+  }
+
+  .card-ivory .names {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+    line-height: 1.1;
+  }
+
+  .card-ivory .name-first {
+    font-size: 52px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    display: block;
+  }
+
+  .card-ivory .name-and {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 36px;
+    color: #6b2737;
+    display: block;
+    margin: 4px 0;
+    font-weight: 400;
+    letter-spacing: 2px;
+  }
+
+  .card-ivory .name-second {
+    font-size: 52px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    display: block;
+  }
+
+  .card-ivory .request {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #555;
+    margin: 24px 0 20px;
+    line-height: 1.8;
+    font-weight: 400;
+  }
+
+  .card-ivory .date-info {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #1a1a1a;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+  }
+
+  .card-ivory .time-info {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+  .card-ivory .venue {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #1a1a1a;
+    letter-spacing: 3px;
+    margin-bottom: 4px;
+  }
+
+  .card-ivory .address {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #666;
+    line-height: 1.8;
+    font-weight: 400;
+  }
+
+  .card-ivory .reception {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 22px;
+    color: #6b2737;
+    margin-top: 24px;
+  }
+
+  /* Striped back peeking out */
+  .card-stripes {
+    width: 420px;
+    height: 580px;
+    top: 68px;
+    left: 45px;
+    transform: rotate(2deg);
+    z-index: 3;
+    background: repeating-linear-gradient(
+      90deg,
+      #f5f0e8 0px,
+      #f5f0e8 32px,
+      #6b2737 32px,
+      #6b2737 64px
+    );
+  }
+
+  /* ---- CARD 2: BURGUNDY WELCOME PARTY ---- */
+  .card-burgundy {
+    width: 320px;
+    height: 460px;
+    background: #5c1a2a;
+    top: 40px;
+    right: 80px;
+    transform: rotate(2deg);
+    z-index: 6;
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #d4d0cc;
+  }
+
+  .card-burgundy .welcome-script {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 20px;
+    color: #c0b8b0;
+    margin-bottom: 2px;
+  }
+
+  .card-burgundy .welcome-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #e8e0d8;
+    margin-bottom: 28px;
+  }
+
+  .card-burgundy .section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #e8e0d8;
+    margin-bottom: 8px;
+    margin-top: 18px;
+  }
+
+  .card-burgundy .section-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    color: #c0b8b0;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .card-burgundy .venue-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #d4d0cc;
+    margin-top: 6px;
+  }
+
+  .card-burgundy .divider {
+    width: 40px;
+    height: 1px;
+    background: #8b5a6a;
+    margin: 16px auto;
+  }
+
+  .card-burgundy .more-info-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #e8e0d8;
+    margin-top: 18px;
+    margin-bottom: 6px;
+  }
+
+  .card-burgundy .website {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    color: #c0b8b0;
+    font-style: italic;
+  }
+
+  /* ---- CARD 3: SILVER RSVP WITH SWANS ---- */
+  .card-silver-wrapper {
+    position: absolute;
+    bottom: 40px;
+    right: 50px;
+    width: 400px;
+    height: 440px;
+    transform: rotate(-1.5deg);
+    z-index: 7;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+  }
+
+  .card-silver {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, #d8d5d0, #c5c2bd, #d0cdc8, #bfbcb7);
+    /* Organic die-cut shape inspired by the wavy/scalloped edges from the inspo */
+    clip-path: path('M 30 40 C 10 50, 2 80, 5 110 C 8 140, 3 160, 8 190 C 12 215, 5 240, 10 270 C 15 300, 8 320, 15 345 C 22 370, 35 395, 60 410 C 90 428, 130 435, 175 438 C 220 440, 265 435, 300 420 C 335 405, 360 385, 375 360 C 390 335, 395 305, 392 275 C 390 245, 395 220, 392 190 C 390 160, 395 135, 390 105 C 385 75, 378 50, 360 35 C 340 20, 310 12, 275 8 C 240 4, 200 2, 165 5 C 130 8, 95 5, 65 15 C 45 22, 38 32, 30 40 Z');
+    padding: 50px 55px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+
+  /* Decorative swan watermark */
+  .swan-watermark {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.12;
+    font-size: 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .card-silver .rsvp-script {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 18px;
+    color: #4a4745;
+    display: inline;
+  }
+
+  .card-silver .rsvp-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #3a3735;
+    display: inline;
+    margin-left: 6px;
+  }
+
+  .card-silver .rsvp-date {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #5a5755;
+    margin-top: 4px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+
+  .card-silver .name-line {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 14px;
+  }
+
+  .card-silver .name-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #5a5755;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .card-silver .name-underline {
+    flex: 1;
+    border-bottom: 1px solid #8a8580;
+  }
+
+  .card-silver .response-options {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 14px;
+  }
+
+  .card-silver .option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .card-silver .option-circle {
+    width: 12px;
+    height: 12px;
+    border: 1.5px solid #6a6560;
+    border-radius: 50%;
+  }
+
+  .card-silver .option-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #4a4745;
+    font-weight: 500;
+  }
+
+  .card-silver .website-note {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 7px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #7a7570;
+    margin-top: 4px;
+  }
+
+  .card-silver .website-url {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    color: #5a5755;
+    font-weight: 500;
+  }
+
+  /* ---- LABEL ---- */
+  .suite-label {
+    position: absolute;
+    bottom: 10px;
+    left: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #999;
+  }
+</style>
+</head>
+<body>
+
+<div class="suite-container">
+
+  <!-- Pink string/rope -->
+  <svg class="pink-string-svg" viewBox="0 0 1300 1000" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 50 500 C 150 480, 250 460, 350 470 C 450 480, 500 490, 550 485 C 650 475, 750 460, 850 470 C 950 480, 1050 500, 1150 490 C 1200 485, 1250 480, 1280 475"
+          stroke="#d4a0a0" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- small bow -->
+    <ellipse cx="540" cy="478" rx="14" ry="8" stroke="#d4a0a0" stroke-width="2" fill="none" transform="rotate(-15, 540, 478)"/>
+    <ellipse cx="565" cy="478" rx="14" ry="8" stroke="#d4a0a0" stroke-width="2" fill="none" transform="rotate(15, 565, 478)"/>
+    <circle cx="552" cy="480" r="2.5" fill="#d4a0a0"/>
+    <!-- trailing ends -->
+    <path d="M 540 485 C 535 500, 530 515, 528 530" stroke="#d4a0a0" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M 565 485 C 570 498, 572 512, 575 525" stroke="#d4a0a0" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </svg>
+
+  <!-- Striped back (peeking behind ivory card) -->
+  <div class="card card-stripes"></div>
+
+  <!-- Card 1: Ivory Invitation -->
+  <div class="card card-ivory">
+    <div class="monogram">B + D</div>
+    <div class="families">Together with their families</div>
+    <div class="names">
+      <span class="name-first">Brooke</span>
+      <span class="name-and">and</span>
+      <span class="name-second">Dylan</span>
+    </div>
+    <div class="request">
+      Request the honor of your presence<br>
+      at their wedding celebration
+    </div>
+    <div class="date-info">OCTOBER 18TH, 2026</div>
+    <div class="time-info">Five o'clock in the evening</div>
+    <div class="venue">THE VENUE</div>
+    <div class="address">
+      123 Garden Lane<br>
+      City, State
+    </div>
+    <div class="reception">Dinner & dancing to follow</div>
+  </div>
+
+  <!-- Card 2: Burgundy Welcome Party -->
+  <div class="card card-burgundy">
+    <div class="welcome-script">the</div>
+    <div class="welcome-title">Welcome Party</div>
+
+    <div class="section-title">Join Us</div>
+    <div class="section-text">
+      Please join us for drinks and light bites<br>
+      as we kick off our wedding weekend
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-title">When</div>
+    <div class="section-text">Friday, October 17th, 2026</div>
+    <div class="section-text">Seven o'clock in the evening</div>
+
+    <div class="divider"></div>
+
+    <div class="section-title">Where</div>
+    <div class="section-text">The Welcome Venue</div>
+    <div class="venue-name">123 Main Street &nbsp;|&nbsp; City, State</div>
+
+    <div class="divider"></div>
+
+    <div class="section-title">Attire</div>
+    <div class="section-text">Cocktail casual</div>
+
+    <div class="divider"></div>
+
+    <div class="more-info-title">For More Info</div>
+    <div class="website">www.BandDwedding.com</div>
+  </div>
+
+  <!-- Card 3: Silver Swan-shaped RSVP -->
+  <div class="card-silver-wrapper">
+  <div class="card-silver">
+    <div class="swan-watermark">&#x1F9A2;</div>
+    <div>
+      <span class="rsvp-script">Kindly</span>
+      <span class="rsvp-title">Respond</span>
+    </div>
+    <div class="rsvp-date">By September 1st, 2026</div>
+    <div class="name-line">
+      <span class="name-label">Name(s)</span>
+      <div class="name-underline"></div>
+    </div>
+    <div class="response-options">
+      <div class="option">
+        <div class="option-circle"></div>
+        <span class="option-text">Happily Accepts</span>
+      </div>
+      <div class="option">
+        <div class="option-circle"></div>
+        <span class="option-text">Sadly Declines</span>
+      </div>
+    </div>
+    <div class="website-note">Or RSVP on our wedding website</div>
+    <div class="website-url">www.BandDwedding.com</div>
+  </div>
+  </div>
+
+  <div class="suite-label">B + D &nbsp;&bull;&nbsp; Wedding Invitation Suite &nbsp;&bull;&nbsp; Mockup</div>
+
+</div>
+
+</body>
+</html>

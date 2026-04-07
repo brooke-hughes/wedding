@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "static (python)",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "3000"],
+      "runtimeExecutable": "/opt/homebrew/bin/node",
+      "runtimeArgs": ["/opt/homebrew/lib/node_modules/serve/build/main.js", "-p", "3000", "-L", "/Users/brookehughes/Desktop/claude-test"],
       "port": 3000
     },
     {
