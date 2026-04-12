@@ -83,8 +83,6 @@ nav {
 /* Nav dropdown */
 .nav-dropdown {
   position: relative;
-  padding: 1.5rem 0;
-  margin: -1.5rem 0;
 }
 
 .nav-dropdown > a {
@@ -97,13 +95,16 @@ nav {
   opacity: 0.5;
 }
 
+.nav-dropdown.open > a::after {
+  content: ' ▴';
+}
+
 .nav-dropdown-menu {
   display: none;
   position: absolute;
-  top: 100%;
+  top: calc(100% + 0.5rem);
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 0;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -113,7 +114,7 @@ nav {
   z-index: 200;
 }
 
-.nav-dropdown:hover .nav-dropdown-menu {
+.nav-dropdown.open .nav-dropdown-menu {
   display: block;
 }
 
