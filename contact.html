@@ -18,6 +18,7 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=797307139438115&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<script>document.addEventListener("click",function(e){var a=e.target.closest("a");if(a&&a.textContent.match(/Book a Free/i)){fbq("track","Schedule",{content_name:a.textContent.trim()})}});</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — B Social Digital Marketing</title>
@@ -178,7 +179,7 @@ src="https://www.facebook.com/tr?id=797307139438115&ev=PageView&noscript=1"
       </form>
       <div style="text-align:center;margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border);">
         <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1rem;">Prefer to skip the form and just chat?</p>
-        <a class="btn btn-secondary" href="https://calendly.com/letsbsocial_/30min" target="_blank" rel="noopener" style="display:inline-block;">Book a Free 30-Min Call</a>
+        <a class="btn btn-secondary" href="https://calendly.com/letsbsocial_/30min" target="_blank" rel="noopener" style="display:inline-block;" onclick="fbq('track','Schedule',{content_name:'Book a Free 30-Min Call'});">Book a Free 30-Min Call</a>
       </div>
     </div>
   </div>
@@ -244,7 +245,7 @@ src="https://www.facebook.com/tr?id=797307139438115&ev=PageView&noscript=1"
     document.body.appendChild(iframe);
 
     if (window.location.search.includes('sent=1')) {
-      document.querySelector('.contact-form').innerHTML = '<div style="text-align:center;padding:3rem 0;"><p style="color:var(--accent);font-weight:600;font-size:1.1rem;margin-bottom:1rem;">Thanks! We\'ll be in touch within 24 hours.</p><p style="color:var(--muted);font-size:0.95rem;margin-bottom:1.5rem;">Want to skip the wait and book a call now?</p><a href="https://calendly.com/letsbsocial_/30min" target="_blank" rel="noopener" class="btn btn-primary" style="display:inline-block;">Book a Free 30-Min Call</a></div>';
+      document.querySelector('.contact-form').innerHTML = '<div style="text-align:center;padding:3rem 0;"><p style="color:var(--accent);font-weight:600;font-size:1.1rem;margin-bottom:1rem;">Thanks! We\'ll be in touch within 24 hours.</p><p style="color:var(--muted);font-size:0.95rem;margin-bottom:1.5rem;">Want to skip the wait and book a call now?</p><a href="https://calendly.com/letsbsocial_/30min" target="_blank" rel="noopener" class="btn btn-primary" style="display:inline-block;" onclick="fbq(\\\'track\\\',\\\'Schedule\\\',{content_name:\\\'Book a Free 30-Min Call\\\'});">Book a Free 30-Min Call</a></div>';
     }
 
     document.getElementById('contactForm').addEventListener('submit', function(e) {
@@ -261,6 +262,12 @@ src="https://www.facebook.com/tr?id=797307139438115&ev=PageView&noscript=1"
         message: form.message.value,
         source: 'contact'
       };
+
+      // Fire Meta Pixel Lead event
+      fbq('track', 'Lead', {
+        content_name: 'Contact Form',
+        content_category: 'lead'
+      });
 
       // Send to Google Sheets
       sendToSheet(data);
