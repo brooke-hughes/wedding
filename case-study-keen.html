@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '797307139438115');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=797307139438115&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<script>document.addEventListener("click",function(e){var a=e.target.closest("a");if(a&&a.textContent.match(/Book a Free/i)){fbq("track","Schedule",{content_name:a.textContent.trim()})}});</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study: Keen — B Social Digital Marketing</title>
+  <meta name="description" content="How B Social ran a $77K Meta Ads campaign for Keen, driving 292 First Billed Minutes at $264 CP-FBM through influencer whitelisting and rigorous A/B testing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .page-hero {
+      padding: 8rem 2rem 4rem;
+      max-width: var(--max);
+      margin: 0 auto;
+      margin-top: 64px;
+    }
+
+    .page-hero h1 { margin-bottom: 1rem; }
+    .page-hero p { color: var(--muted); max-width: 560px; font-size: 1.1rem; }
+
+    /* Client header */
+    .client-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .client-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .client-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 8px;
+    }
+
+    .client-info p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Overview cards */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin: 3rem 0;
+    }
+
+    .overview-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    .overview-card .label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .overview-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Story sections */
+    .story-section { margin-bottom: 3rem; }
+
+    .story-section h2 { margin-bottom: 1rem; }
+
+    .story-section p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      max-width: 720px;
+    }
+
+    .story-section ul {
+      list-style: none;
+      max-width: 720px;
+      margin: 1rem 0 1.5rem;
+    }
+
+    .story-section ul li {
+      padding: 0.4rem 0;
+      padding-left: 1.4rem;
+      position: relative;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .story-section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.75rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--pop);
+    }
+
+    /* Strategy cards */
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin: 2rem 0;
+      max-width: 720px;
+    }
+
+    .strategy-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+    }
+
+    .strategy-card h3 {
+      font-family: 'Archivo', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.5rem;
+      color: var(--pop);
+    }
+
+    .strategy-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 0;
+    }
+
+    /* Results highlight */
+    .results-highlight {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 3rem;
+      margin: 3rem 0;
+    }
+
+    .results-highlight h2 { margin-bottom: 0.5rem; }
+
+    .results-highlight > p {
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    /* Metric breakdown */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .metric-item {
+      border-left: 3px solid var(--pop);
+      padding-left: 1.25rem;
+    }
+
+    .metric-item .number {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--pop);
+    }
+
+    .metric-item .label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    .metric-item .context {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+      font-style: italic;
+    }
+
+    /* Test results table */
+    .test-results {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin: 2rem 0;
+      max-width: 720px;
+    }
+
+    .test-results h3 {
+      font-family: 'Archivo', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+      color: var(--pop);
+    }
+
+    .test-results p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 0.5rem;
+    }
+
+    .test-results .winner {
+      color: var(--pop);
+      font-weight: 600;
+    }
+
+    /* CTA */
+    .cta-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .cta-banner h2 { margin-bottom: 1rem; }
+    .cta-banner p { color: var(--muted); max-width: 480px; margin: 0 auto 2rem; }
+
+    @media (max-width: 768px) {
+      .overview-grid { grid-template-columns: 1fr; }
+      .metrics-grid { grid-template-columns: 1fr; }
+      .strategy-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="bsocial." /></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="services.html">Services</a>
+      <a href="about.html">Our Story</a>
+      <a href="case-studies.html" class="active">Case Studies</a>
+      <div class="nav-dropdown"><a onclick="this.parentElement.classList.toggle('open')">Industries</a><div class="nav-dropdown-menu"><a href="industries/med-spas.html">Med Spas</a><a href="bridal.html">Bridal Boutiques</a><a href="industries/event-rentals.html">Event Rentals</a><a href="industries/cosmetic-dentistry.html">Cosmetic Dentistry</a><a href="industries/wellness.html">Wellness</a><a href="industries/beauty-skincare.html">Beauty &amp; Skincare</a><a href="industries/food-bev.html">Food &amp; Bev</a><a href="industries/wedding-venues.html">Wedding Venues</a></div></div>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html" class="nav-cta">Work With Us</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <p class="section-label fade-in">Case Study</p>
+    <h1 class="fade-in">Scaling conversions with <em>influencer-led</em> paid media</h1>
+    <p class="fade-in">How we managed a $77K Meta Ads campaign for Keen, driving 292 First Billed Minutes through influencer whitelisting and structured A/B testing.</p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Client Info -->
+  <div class="section">
+    <div class="client-header fade-in">
+      <div class="client-logo" style="font-family:'Instrument Serif',serif;font-size:1.4rem;color:var(--pop);">Keen</div>
+      <div class="client-info">
+        <h2 style="margin-bottom: 0.25rem;">Keen</h2>
+        <p>Psychic &amp; spiritual advisor platform &mdash; connecting users with live advisors via phone and chat.</p>
+      </div>
+    </div>
+
+    <div class="overview-grid fade-in">
+      <div class="overview-card">
+        <div class="label">Industry</div>
+        <p>Spiritual Wellness / Live Advisor Platform</p>
+      </div>
+      <div class="overview-card">
+        <div class="label">Channels</div>
+        <p>Meta Ads (Facebook + Instagram)</p>
+      </div>
+      <div class="overview-card">
+        <div class="label">Focus</div>
+        <p>Influencer Whitelisting &amp; Conversion-Optimized Paid Social</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- The Challenge -->
+  <div class="section">
+    <div class="story-section fade-in">
+      <p class="section-label">The Problem</p>
+      <h2>Driving conversions at scale in a <em>niche market</em></h2>
+      <p>
+        Keen needed to scale First Billed Minutes (their core conversion event) through paid social while keeping cost-per-conversion sustainable. The challenge: reaching high-intent users in a niche vertical where traditional targeting doesn't work the same way.
+      </p>
+      <ul>
+        <li>Niche audience that doesn't respond well to standard interest-based targeting</li>
+        <li>Needed to test broad vs. lookalike audiences to find the most efficient path to scale</li>
+        <li>Multiple optimization events to evaluate (First Billed Minute vs. Add Payment Info)</li>
+        <li>Influencer content needed to be tested across both Keen-handle and whitelisted delivery</li>
+      </ul>
+      <p>
+        The product had strong retention. The challenge was getting the right people through the door at a cost that made the unit economics work.
+      </p>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- The Strategy -->
+  <div class="section">
+    <div class="story-section fade-in">
+      <p class="section-label">The Strategy</p>
+      <h2>Test everything. Scale what <em>works</em>.</h2>
+
+      <div class="strategy-grid">
+        <div class="strategy-card">
+          <h3>01. Audience Testing</h3>
+          <p>Tested 1% Lookalike audiences against Broad 18+ targeting. Broad won quickly and decisively, delivering conversions at nearly half the cost. We paused the lookalike and went all-in on broad.</p>
+        </div>
+        <div class="strategy-card">
+          <h3>02. Optimization Event Testing</h3>
+          <p>Ran parallel campaigns optimizing toward two different conversion events: First Billed Minute (the core metric) and Add Payment Info (an earlier funnel step). Compared efficiency at scale to find the optimal signal for Meta's algorithm.</p>
+        </div>
+        <div class="strategy-card">
+          <h3>03. Influencer Whitelisting</h3>
+          <p>Partnered with 8 influencer creators and ran ads through both the Keen brand handle and whitelisted through influencer accounts. Whitelisted ads drove 94% of volume at nearly half the CP-FBM.</p>
+        </div>
+        <div class="strategy-card">
+          <h3>04. Creative Velocity</h3>
+          <p>Rapidly tested video content across all 8 influencers, identifying top performers and reallocating budget in real-time. The best-performing whitelisted ad hit a $105 CP-FBM &mdash; less than half the account average.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Test Results -->
+  <div class="section">
+    <div class="story-section fade-in">
+      <p class="section-label">The Tests</p>
+      <h2>Three structured tests that <em>shaped the strategy</em></h2>
+
+      <div class="test-results">
+        <h3>Test 1: Lookalike vs. Broad Audience</h3>
+        <p>Broad 18+ spent $59.8K and drove 226 FBMs at <span class="winner">$264.92 CP-FBM</span>.</p>
+        <p>1% Lookalike spent $1.5K and drove only 3 FBMs at $503.14 CP-FBM.</p>
+        <p><span class="winner">Winner: Broad audience &mdash; paused lookalike quickly.</span></p>
+      </div>
+
+      <div class="test-results">
+        <h3>Test 2: FBM vs. Add Payment Info Optimization</h3>
+        <p>FBM campaign: $61.4K spend, 229 FBMs, $268.04 CP-FBM.</p>
+        <p>Add Payment Info campaign: $15.6K spend, 63 FBMs, <span class="winner">$247.47 CP-FBM</span>.</p>
+        <p><span class="winner">Winner: Add Payment Info optimization &mdash; ~8% more efficient.</span></p>
+      </div>
+
+      <div class="test-results">
+        <h3>Test 3: Keen Handle vs. Whitelisted Delivery</h3>
+        <p>Keen handle top performer: Jennifer Borget &mdash; 23 FBMs at $211 CP-FBM.</p>
+        <p>Whitelisted top performer: TheMidlifeFashionista &mdash; 6 FBMs at <span class="winner">$105 CP-FBM</span>.</p>
+        <p>In the Add Payment Info campaign, whitelisted ads drove <span class="winner">94% of all FBMs at nearly half the CP-FBM</span> vs. Keen handle ads ($500+).</p>
+        <p><span class="winner">Winner: Whitelisted delivery &mdash; dominant across both volume and efficiency.</span></p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- The Results -->
+  <div class="section">
+    <div class="results-highlight fade-in">
+      <p class="section-label">The Results</p>
+      <h2>$77K managed, 292 conversions &mdash; <em>data-driven scale</em></h2>
+      <p>A structured testing framework that identified the optimal audience, optimization event, and creative delivery at scale.</p>
+
+      <div class="metrics-grid">
+        <div class="metric-item">
+          <div class="number">292</div>
+          <div class="label">First Billed Minutes</div>
+          <div class="context">Core conversion event over the campaign</div>
+        </div>
+        <div class="metric-item">
+          <div class="number">$264</div>
+          <div class="label">Blended CP-FBM</div>
+          <div class="context">Cost per First Billed Minute across all campaigns</div>
+        </div>
+        <div class="metric-item">
+          <div class="number">$105</div>
+          <div class="label">Best CP-FBM</div>
+          <div class="context">TheMidlifeFashionista whitelisted ad &mdash; top efficiency</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Key Takeaways -->
+  <div class="section">
+    <div class="story-section fade-in">
+      <p class="section-label">Key Takeaways</p>
+      <h2>What made this <em>work</em></h2>
+      <p>
+        <strong>Broad beats lookalike at scale.</strong> The lookalike audience seemed like the obvious play, but broad targeting let Meta's algorithm find converters we never would have targeted manually &mdash; at half the cost.
+      </p>
+      <p>
+        <strong>Whitelisted ads outperform brand-handle ads.</strong> Delivering ads through influencer accounts instead of the brand handle drove 94% of conversions at nearly half the cost. Creator-led delivery resonates more authentically in-feed.
+      </p>
+      <p>
+        <strong>Test the optimization event, not just the creative.</strong> Most advertisers only test audiences and creatives. We also tested which funnel event to optimize toward &mdash; and found an 8% efficiency gain by optimizing for Add Payment Info instead of the final conversion.
+      </p>
+      <p>
+        <strong>Structured testing compounds.</strong> Each test built on the last. Audience test informed budget allocation. Optimization test informed campaign structure. Creative test informed which influencers to scale. The compounding effect of layered insights is what drives real performance.
+      </p>
+    </div>
+  </div>
+
+  <!-- Influencer Partners -->
+  <div class="section">
+    <div class="story-section fade-in">
+      <p class="section-label">Creator Partners</p>
+      <h2>8 influencers tested, <em>top performers scaled</em></h2>
+      <ul>
+        <li><strong>Jennifer Borget</strong> &mdash; 23 FBMs at ~$211 CP-FBM (Keen handle), strongest volume driver</li>
+        <li><strong>ItsMeJenWhite</strong> &mdash; 48 FBMs at ~$189 CP-FBM (whitelisted), best combo of volume + efficiency</li>
+        <li><strong>Liv Fuselli</strong> &mdash; 50 FBMs at ~$231 CP-FBM (whitelisted), highest volume whitelisted ad</li>
+        <li><strong>TheMidlifeFashionista</strong> &mdash; lowest CP-FBM at ~$105 (whitelisted), most efficient performer</li>
+        <li>Melinda_melros, Michelle_says, Seventy_Waves, Nazaninkavari &mdash; additional creative testing</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="section">
+    <div class="cta-banner fade-in">
+      <p class="section-label">Your Turn</p>
+      <h2>Want results like these for <em>your</em> brand?</h2>
+      <p>If your ad account feels stuck or fragmented, let's talk. We'll audit it for free and show you what's possible.</p>
+      <a class="btn btn-primary" href="contact.html">Get a Free Strategy Call</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 <span>B Social</span> Digital Marketing &middot; All rights reserved.</p>
+    <p style="margin-top:0.75rem;"><a href="https://www.instagram.com/bsocial_digitalmarketing/" target="_blank" rel="noopener" style="color:var(--pop);font-weight:500;">@bsocial_digitalmarketing</a> &nbsp;&middot;&nbsp; <a href="https://www.tiktok.com/@brooketheadsgirl" target="_blank" rel="noopener" style="color:var(--pop);font-weight:500;">@brooketheadsgirl</a></p>
+    <p style="margin-top:0.5rem;font-size:0.7rem;color:var(--muted);">built on matcha &amp; ambition &#x1F375;</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+<script>document.addEventListener("click",function(e){var d=document.querySelector(".nav-dropdown");if(d&&!d.contains(e.target))d.classList.remove("open")});</script>
+<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69da5744b5c4e0919e521e22"></script>
+
+</body>
+</html>
